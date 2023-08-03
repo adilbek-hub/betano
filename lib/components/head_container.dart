@@ -192,26 +192,44 @@ class _HeadContainerState extends State<HeadContainer> {
       builder: (context) {
         return Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AlertDialog(
                   backgroundColor: const Color(0xffe7e7e7),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  content: SizedBox(
-                    width: 280,
-                    height: 500,
-                    child: ListView.builder(
-                        itemCount: 10,
-                        itemBuilder: (context, index) {
-                          return AlertDialog(
-                            title: ListTile(
-                              title: Text('Index'),
-                            ),
-                          );
-                        }),
+                  content: Column(
+                    children: [
+                      Row(children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.arrow_back_ios_new),
+                        ),
+                        Text('Back'),
+                        Center(
+                          child: Row(
+                            children: [
+                              Text('Coose League'),
+                            ],
+                          ),
+                        ),
+                      ]),
+                      SizedBox(
+                        width: 280,
+                        height: 500,
+                        child: ListView.builder(
+                            itemCount: 10,
+                            itemBuilder: (context, index) {
+                              return const AlertDialog(
+                                title: ListTile(
+                                  title: Text('Index'),
+                                ),
+                              );
+                            }),
+                      ),
+                    ],
                   )),
               AlertDialog(
                 backgroundColor: Colors.transparent,
