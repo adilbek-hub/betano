@@ -16,32 +16,224 @@ class HeadContainer extends StatefulWidget {
 }
 
 class _HeadContainerState extends State<HeadContainer> {
-  bool isCategoryVisible = false;
-  bool isRemindVisible = false;
-  bool isOptionsVisible = false;
+  bool isFirst = false;
+  bool isSecond = false;
+  bool isThird = false;
 
   void toggleCategoryVisibility() {
     setState(() {
-      isCategoryVisible = !isCategoryVisible;
-      isRemindVisible = false;
-      isOptionsVisible = false;
+      isFirst = !isFirst;
+      isSecond = false;
+      isThird = false;
     });
   }
 
   void toggleRemindVisibility() {
     setState(() {
-      isRemindVisible = !isRemindVisible;
-      isCategoryVisible = false;
-      isOptionsVisible = false;
+      isSecond = !isSecond;
+      isFirst = false;
+      isThird = false;
     });
   }
 
   void toggleOptionsVisibility() {
     setState(() {
-      isOptionsVisible = !isOptionsVisible;
-      isCategoryVisible = false;
-      isRemindVisible = false;
+      isThird = !isThird;
+      isFirst = false;
+      isSecond = false;
     });
+  }
+
+//CHOOSE SPORT
+  bool isValeyball = false;
+  bool isHandball = false;
+  bool isValeyballWomen = false;
+  bool isHandballWomen = false;
+  void toggleValleyballVisibility() {
+    setState(() {
+      isValeyball = !isValeyball;
+      isHandball = false;
+      isValeyballWomen = false;
+      isHandballWomen = false;
+    });
+  }
+
+  void toggleHandballVisibility() {
+    setState(() {
+      isValeyball = false;
+      isHandball = !isHandball;
+      isValeyballWomen = false;
+      isHandballWomen = false;
+    });
+  }
+
+  void toggleValeyballWomenVisibility() {
+    setState(() {
+      isValeyball = false;
+      isHandball = false;
+      isValeyballWomen = !isValeyballWomen;
+      isHandballWomen = false;
+    });
+  }
+
+  void toggleHandballWomenVisibility() {
+    setState(() {
+      isValeyball = false;
+      isHandball = false;
+      isValeyballWomen = false;
+      isHandballWomen = !isHandballWomen;
+    });
+  }
+
+  void showAboutDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              AlertDialog(
+                backgroundColor: const Color(0xffe7e7e7),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                content: Column(
+                  children: [
+                    const Center(
+                        child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 35),
+                      child: Text(
+                        'Choose sport',
+                        style: TextStyle(
+                          color: Color(0xff313131),
+                          fontSize: 21,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    )),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ChooseCard(
+                          onTap: toggleValleyballVisibility,
+                          image: 'assets/images/ballValeyball.png',
+                          text1: 'Valeyball',
+                          bgColor: !isValeyball ? Colors.white : Colors.orange,
+                        ),
+                        ChooseCard(
+                            image: 'assets/images/bollHandball.png',
+                            text1: 'Handball',
+                            bgColor: !isHandball ? Colors.white : Colors.orange,
+                            onTap: () {
+                              toggleHandballVisibility();
+                              chooseLeagueDialog(context);
+                            }),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ChooseCard(
+                          image: 'assets/images/ballValeyball.png',
+                          text1: 'Valeyball',
+                          text2: 'Women',
+                          bgColor:
+                              !isValeyballWomen ? Colors.white : Colors.orange,
+                          onTap: toggleValeyballWomenVisibility,
+                        ),
+                        ChooseCard(
+                            image: 'assets/images/ballWomenHandball.png',
+                            text1: 'Handball',
+                            text2: 'Women',
+                            bgColor:
+                                !isHandballWomen ? Colors.white : Colors.orange,
+                            onTap: () {
+                              toggleHandballWomenVisibility();
+                            }),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 30),
+                      child: Image.asset('assets/images/B_etano.png'),
+                    ),
+                  ],
+                ),
+              ),
+              AlertDialog(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                title: Center(
+                    child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: const Text(
+                    'Cancel',
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                )),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void chooseLeagueDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              AlertDialog(
+                  backgroundColor: const Color(0xffe7e7e7),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  content: SizedBox(
+                    width: 280,
+                    height: 500,
+                    child: ListView.builder(
+                        itemCount: 10,
+                        itemBuilder: (context, index) {
+                          return AlertDialog(
+                            title: ListTile(
+                              title: Text('Index'),
+                            ),
+                          );
+                        }),
+                  )),
+              AlertDialog(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                title: Center(
+                    child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: const Text(
+                    'Cancel',
+                    style: TextStyle(
+                      color: AppColors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                )),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -51,7 +243,7 @@ class _HeadContainerState extends State<HeadContainer> {
       child: Center(
         child: Container(
           decoration: const BoxDecoration(
-            color: AppColors.black,
+            color: AppColors.black1,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -60,39 +252,35 @@ class _HeadContainerState extends State<HeadContainer> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ChoiceInHeadContainer(
-                    bgColor:
-                        !isCategoryVisible ? Colors.transparent : Colors.orange,
-                    borderColor:
-                        !isCategoryVisible ? Colors.white : Colors.orange,
-                    text: 'Category',
-                    style: GoogleFonts.roboto(
-                      color: !isCategoryVisible ? Colors.white : Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    onTap: toggleCategoryVisibility,
-                  ),
+                      bgColor: !isFirst ? Colors.transparent : Colors.orange,
+                      borderColor: !isFirst ? Colors.white : Colors.orange,
+                      text: 'Category',
+                      style: GoogleFonts.roboto(
+                        color: !isFirst ? Colors.white : Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      onTap: () {
+                        toggleCategoryVisibility();
+                        showAboutDialog(context);
+                      }),
                   ChoiceInHeadContainer(
-                    bgColor:
-                        !isRemindVisible ? Colors.transparent : Colors.orange,
-                    borderColor:
-                        !isRemindVisible ? Colors.white : Colors.orange,
+                    bgColor: !isSecond ? Colors.transparent : Colors.orange,
+                    borderColor: !isSecond ? Colors.white : Colors.orange,
                     text: 'Remind',
                     style: GoogleFonts.roboto(
-                      color: !isRemindVisible ? Colors.white : Colors.black,
+                      color: !isSecond ? Colors.white : Colors.black,
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
                     onTap: toggleRemindVisibility,
                   ),
                   ChoiceInHeadContainer(
-                    bgColor:
-                        !isOptionsVisible ? Colors.transparent : Colors.orange,
-                    borderColor:
-                        !isOptionsVisible ? Colors.white : Colors.orange,
+                    bgColor: !isThird ? Colors.transparent : Colors.orange,
+                    borderColor: !isThird ? Colors.white : Colors.orange,
                     text: 'Options',
                     style: GoogleFonts.roboto(
-                      color: !isOptionsVisible ? Colors.white : Colors.black,
+                      color: !isThird ? Colors.white : Colors.black,
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
