@@ -1,4 +1,5 @@
 import 'package:betano/components/white_dialog.dart';
+import 'package:betano/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -190,65 +191,75 @@ class _HeadContainerState extends State<HeadContainer> {
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: Column(
-            // mainAxisAlignment: MainAxisAlignment.center,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              AlertDialog(
-                  backgroundColor: const Color(0xffe7e7e7),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  content: Column(
-                    children: [
-                      Row(children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.arrow_back_ios_new),
-                        ),
-                        Text('Back'),
-                        Center(
-                          child: Row(
-                            children: [
-                              Text('Coose League'),
-                            ],
-                          ),
-                        ),
-                      ]),
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            AlertDialog(
+                backgroundColor: const Color(0xffe7e7e7),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                content: Column(
+                  children: [
+                    Row(children: [
                       SizedBox(
-                        width: 280,
-                        height: 500,
-                        child: ListView.builder(
-                            itemCount: 10,
-                            itemBuilder: (context, index) {
-                              return const AlertDialog(
-                                title: ListTile(
-                                  title: Text('Index'),
-                                ),
-                              );
-                            }),
+                        width: 23,
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.arrow_back_ios,
+                          ),
+                          color: AppColors.tabColor,
+                        ),
                       ),
-                    ],
-                  )),
-              AlertDialog(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                title: Center(
-                    child: InkWell(
-                  onTap: () => Navigator.pop(context),
-                  child: const Text(
-                    'Cancel',
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      const Text(
+                        'Back',
+                        style: AppTextStyes.backTextStyle,
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          'Choose League',
+                          style: AppTextStyes.leagueTextStyle,
+                        ),
+                      ),
+                    ]),
+                    SizedBox(
+                      width: 270,
+                      height: 456,
+                      child: ListView.builder(
+                          itemCount: 10,
+                          itemBuilder: (context, index) {
+                            return SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              child: const Card(
+                                child: ListTile(
+                                  title: Text('data'),
+                                ),
+                              ),
+                            );
+                          }),
                     ),
-                  ),
+                  ],
                 )),
-              ),
-            ],
-          ),
+            AlertDialog(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              title: Center(
+                  child: InkWell(
+                onTap: () => Navigator.pop(context),
+                child: const Text(
+                  'Cancel',
+                  style: TextStyle(
+                    color: AppColors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              )),
+            ),
+          ],
         );
       },
     );
