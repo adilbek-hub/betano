@@ -1,4 +1,4 @@
-import 'package:betano/components/plus_minus.dart';
+import 'package:betano/components/t.dart';
 import 'package:betano/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -76,15 +76,7 @@ class _TableMatchesBodyState extends State<TableMatchesBody> {
                   indent: 10,
                   thickness: 1,
                 ),
-                SizedBox(
-                  height: 400,
-                  child: ListView.builder(
-                    itemCount: 1,
-                    itemBuilder: (BuildContext context, int index) {
-                      return PlusMinusContainer();
-                    },
-                  ),
-                ),
+                CustomWidget(),
               ],
             )
           ],
