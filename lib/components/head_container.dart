@@ -1,11 +1,13 @@
-import 'package:betano/components/white_dialog.dart';
+import 'package:betano/components/choose_sport_button.dart';
 import 'package:betano/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/app_colors.dart';
 
+import '../models/choose_league_model.dart';
 import 'choice_in_head_container.dart';
+import 'choose_card.dart';
 
 class HeadContainer extends StatefulWidget {
   const HeadContainer({
@@ -86,6 +88,9 @@ class _HeadContainerState extends State<HeadContainer> {
     });
   }
 
+//ChooseLeague
+  List<ChooseLeague> shooseLeague = shooseLeagueList;
+
   void showAboutDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -119,11 +124,14 @@ class _HeadContainerState extends State<HeadContainer> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ChooseCard(
-                          onTap: toggleValleyballVisibility,
-                          image: 'assets/images/ballValeyball.png',
-                          text1: 'Valeyball',
-                          bgColor: !isValeyball ? Colors.white : Colors.orange,
-                        ),
+                            image: 'assets/images/ballValeyball.png',
+                            text1: 'Valeyball',
+                            bgColor:
+                                !isValeyball ? Colors.white : Colors.orange,
+                            onTap: () {
+                              toggleValleyballVisibility();
+                              Navigator.pushNamed(context, '/TableView');
+                            }),
                         ChooseCard(
                             image: 'assets/images/bollHandball.png',
                             text1: 'Handball',
@@ -196,68 +204,58 @@ class _HeadContainerState extends State<HeadContainer> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             AlertDialog(
-                backgroundColor: const Color(0xffe7e7e7),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                content: Column(
-                  children: [
-                    Row(children: [
-                      SizedBox(
-                        width: 23,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.arrow_back_ios,
-                          ),
-                          color: AppColors.tabColor,
-                        ),
-                      ),
-                      const Text(
-                        'Back',
-                        style: AppTextStyes.backTextStyle,
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Text(
-                          'Choose League',
-                          style: AppTextStyes.leagueTextStyle,
-                        ),
-                      ),
-                    ]),
+              backgroundColor: const Color(0xffe7e7e7),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              content: Column(
+                children: [
+                  Row(children: [
                     SizedBox(
-                      width: 270,
-                      height: 456,
-                      child: ListView.builder(
-                          itemCount: 10,
-                          itemBuilder: (context, index) {
-                            return SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: const Card(
-                                child: ListTile(
-                                  title: Text('data'),
-                                ),
-                              ),
-                            );
-                          }),
+                      width: 23,
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                        ),
+                        color: AppColors.tabColor,
+                      ),
                     ),
-                  ],
-                )),
-            AlertDialog(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              title: Center(
-                  child: InkWell(
-                onTap: () => Navigator.pop(context),
-                child: const Text(
-                  'Cancel',
-                  style: TextStyle(
-                    color: AppColors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
+                    const Text(
+                      'Back',
+                      style: AppTextStyes.backTextStyle,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        'Choose League',
+                        style: AppTextStyes.leagueTextStyle,
+                      ),
+                    ),
+                  ]),
+                  SizedBox(
+                    width: 270,
+                    height: 456,
+                    child: ListView.builder(
+                        itemCount: shooseLeague.length,
+                        itemBuilder: (context, index) {
+                          final choose = shooseLeague[index];
+                          return SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: Card(
+                              child: ListTile(
+                                leading: Image.asset(
+                                    'assets/images/${choose.image}.png'),
+                                title: Text(choose.text),
+                              ),
+                            ),
+                          );
+                        }),
                   ),
-                ),
-              )),
+                ],
+              ),
             ),
           ],
         );
@@ -317,7 +315,10 @@ class _HeadContainerState extends State<HeadContainer> {
                   ),
                 ],
               ),
-              const WhiteDialog(),
+              const ChooseSportButton(
+                image: 'assets/images/whiteValeyballBall.png',
+                text: 'Valleyball',
+              ),
             ],
           ),
         ),
