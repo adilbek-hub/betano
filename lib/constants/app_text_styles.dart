@@ -17,4 +17,14 @@ class AppTextStyes {
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );
+  static const tableMatchesTextStyle = TextStyle(
+    color: AppColors.tableMatchesTextColor,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
+  static const leaque2Style = TextStyle(
+    color: AppColors.league,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+  );
 }

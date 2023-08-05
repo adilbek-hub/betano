@@ -8,4 +8,6 @@ class AppColors {
   static const tabColor = Color(0xffF16721);
   static const backColor = Color(0xffff7d05);
   static const textColor = Color(0xff313131);
+  static const tableMatchesTextColor = Color(0xff262626);
+  static const league = Color(0xff3e3e3e);
 }
