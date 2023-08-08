@@ -61,7 +61,9 @@ class _TableMatchesBodyState extends State<TableMatchesBody> {
               children: [
                 CustomButton(
                   backgroundColor: button1Color,
-                  onPressed: changeButton,
+                  onPressed: () {
+                    changeButton();
+                  },
                   text: 'Table',
                 ),
                 CustomButton(
