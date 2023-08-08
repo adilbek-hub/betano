@@ -37,4 +37,14 @@ class AppTextStyes {
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
+  static const chooseSportTextStyle = TextStyle(
+    color: Color(0xff313131),
+    fontSize: 21,
+    fontWeight: FontWeight.w600,
+  );
+  static const cencelTextStyle = TextStyle(
+    color: AppColors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
 }

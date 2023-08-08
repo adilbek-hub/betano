@@ -1,4 +1,5 @@
 import 'package:betano/components/league2womenList.dart';
+import 'package:betano/constants/app_sized.dart';
 import 'package:betano/constants/app_text_styles.dart';
 import 'package:betano/models/choose_league_model.dart';
 import 'package:betano/models/league_women.dart';
@@ -34,6 +35,14 @@ class _TableMatchesBodyState extends State<TableMatchesBody> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    setState(() {
+      button1Color = AppColors.tabColor;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: 3,
@@ -65,14 +74,14 @@ class _TableMatchesBodyState extends State<TableMatchesBody> {
             Center(
               child: Column(
                 children: [
-                  const SizedBox(height: 25),
+                  AppSized.height25,
                   Image.asset('assets/images/bigPLBack.png'),
-                  const SizedBox(height: 25),
+                  AppSized.height25,
                   const Text(
                     'League 2. Women',
                     style: AppTextStyes.leaque2Style,
                   ),
-                  const SizedBox(height: 5),
+                  AppSized.height5,
                   Align(
                     alignment: Alignment.centerRight,
                     child: Padding(
@@ -85,7 +94,7 @@ class _TableMatchesBodyState extends State<TableMatchesBody> {
                     indent: 10,
                     thickness: 1,
                   ),
-                  const SizedBox(height: 10),
+                  AppSized.height10,
                   CustomWidget(
                     shooseLeague: shooseLeagueList,
                     aList: leagueWomenList,

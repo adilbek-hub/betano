@@ -105,7 +105,7 @@ class _CustomWidgetState extends State<CustomWidget> {
                           children: [
                             Image.asset(
                                 'assets/images/${leagueWomen.icon}.png'),
-                            const SizedBox(width: 5),
+                            AppSized.width5,
                             Text(
                               leagueWomen.text,
                               style: AppTextStyes.wdlpTextStyle,
@@ -118,17 +118,17 @@ class _CustomWidgetState extends State<CustomWidget> {
                               '${leagueWomen.wNum}',
                               style: AppTextStyes.wdlpTextStyle,
                             ),
-                            const SizedBox(width: 35),
+                            AppSized.width35,
                             Text(
                               '${leagueWomen.wNum}',
                               style: AppTextStyes.wdlpTextStyle,
                             ),
-                            SizedBox(width: 35),
+                            AppSized.width35,
                             Text(
                               '${leagueWomen.dNum}',
                               style: AppTextStyes.wdlpTextStyle,
                             ),
-                            SizedBox(width: 35),
+                            AppSized.width35,
                             Text(
                               '${leagueWomen.lNum}',
                               style: AppTextStyes.wdlpTextStyle,
@@ -147,7 +147,7 @@ class _CustomWidgetState extends State<CustomWidget> {
 }
 
 
-
+// 2  вариант
 
 /*class CustomWidget extends StatelessWidget {
   const CustomWidget({super.key});
