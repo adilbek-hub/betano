@@ -27,4 +27,14 @@ class AppTextStyes {
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
+  static const wdlpStyle = TextStyle(
+    color: Color(0xffafafaf),
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
+  static const wdlpTextStyle = TextStyle(
+    color: Color(0xff646464),
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+  );
 }

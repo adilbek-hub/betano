@@ -1,5 +1,7 @@
-import 'package:betano/components/t.dart';
+import 'package:betano/components/league2womenList.dart';
 import 'package:betano/constants/app_text_styles.dart';
+import 'package:betano/models/choose_league_model.dart';
+import 'package:betano/models/league_women.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/app_colors.dart';
@@ -60,24 +62,36 @@ class _TableMatchesBodyState extends State<TableMatchesBody> {
                 ),
               ],
             ),
-            Column(
-              children: [
-                Image.asset('assets/images/bigPLBack.png'),
-                const Text(
-                  'League 2. Women',
-                  style: AppTextStyes.leaque2Style,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Image.asset('assets/images/i.png'),
-                ),
-                const Divider(
-                  endIndent: 10,
-                  indent: 10,
-                  thickness: 1,
-                ),
-                CustomWidget(),
-              ],
+            Center(
+              child: Column(
+                children: [
+                  const SizedBox(height: 25),
+                  Image.asset('assets/images/bigPLBack.png'),
+                  const SizedBox(height: 25),
+                  const Text(
+                    'League 2. Women',
+                    style: AppTextStyes.leaque2Style,
+                  ),
+                  const SizedBox(height: 5),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Image.asset('assets/images/i.png'),
+                    ),
+                  ),
+                  const Divider(
+                    endIndent: 10,
+                    indent: 10,
+                    thickness: 1,
+                  ),
+                  const SizedBox(height: 10),
+                  CustomWidget(
+                    shooseLeague: shooseLeagueList,
+                    aList: leagueWomenList,
+                  ),
+                ],
+              ),
             )
           ],
         ),

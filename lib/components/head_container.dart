@@ -112,11 +112,7 @@ class _HeadContainerState extends State<HeadContainer> {
                       padding: EdgeInsets.symmetric(vertical: 35),
                       child: Text(
                         'Choose sport',
-                        style: TextStyle(
-                          color: Color(0xff313131),
-                          fontSize: 21,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: AppTextStyes.chooseSportTextStyle,
                       ),
                     )),
                     Row(
@@ -180,11 +176,7 @@ class _HeadContainerState extends State<HeadContainer> {
                   onTap: () => Navigator.pop(context),
                   child: const Text(
                     'Cancel',
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: AppTextStyes.cencelTextStyle,
                   ),
                 )),
               ),

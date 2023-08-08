@@ -1,3 +1,4 @@
+import 'package:betano/constants/app_sized.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -31,7 +32,7 @@ class _ChooseSportButtonState extends State<ChooseSportButton> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('${widget.image}'),
-            const SizedBox(width: 5),
+            AppSized.width5,
             Text(
               widget.text,
               style: GoogleFonts.roboto(
