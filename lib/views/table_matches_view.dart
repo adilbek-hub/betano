@@ -1,4 +1,4 @@
-import 'package:betano/components/table_matches_body.dart';
+import 'package:betano/components/table_matches_button.dart';
 import 'package:flutter/material.dart';
 import '../components/head_container.dart';
 
@@ -12,7 +12,7 @@ class TableView extends StatelessWidget {
         body: Column(
           children: [
             HeadContainer(),
-            TableMatchesBody(),
+            TableMatchesButton(),
           ],
         ),
       ),

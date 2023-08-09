@@ -1,7 +1,7 @@
 import 'package:betano/views/menu_view.dart';
 import 'package:flutter/material.dart';
 
-import '../views/table_view.dart';
+import '../views/table_matches_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

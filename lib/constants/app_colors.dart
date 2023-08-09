@@ -10,4 +10,5 @@ class AppColors {
   static const textColor = Color(0xff313131);
   static const tableMatchesTextColor = Color(0xff262626);
   static const league = Color(0xff3e3e3e);
+  static const upcomingCompleted = Color(0xff5f5f5f);
 }
