@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 
+import 'package:betano/models/upcoming_completed_model.dart';
+
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
 
 class UpcomingWomenTeamLists extends StatelessWidget {
   const UpcomingWomenTeamLists({
-    super.key,
-  });
+    Key? key,
+    required this.upcomingCompletedList,
+  }) : super(key: key);
+  final List<UpcomingCompleted> upcomingCompletedList;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +19,7 @@ class UpcomingWomenTeamLists extends StatelessWidget {
       child: ListView.builder(
           itemCount: 50,
           itemBuilder: (context, index) {
+            final upcomingCompleted = upcomingCompletedList[index];
             return Container(
               margin: const EdgeInsets.only(
                 left: 20,
@@ -36,7 +41,10 @@ class UpcomingWomenTeamLists extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [Image.asset('assets/images/alarm.png')],
+                      children: [
+                        Image.asset(
+                            'assets/images/${upcomingCompleted.alarm}.png')
+                      ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -44,22 +52,23 @@ class UpcomingWomenTeamLists extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            Image.asset('assets/images/PlYellow2.png'),
+                            Image.asset(
+                                'assets/images/${upcomingCompleted.image1}.png'),
                             AppSized.height5,
-                            const Text(
-                              'Leaque 2. Women',
+                            Text(
+                              upcomingCompleted.text1,
                               style: AppTextStyes.textTextStyle,
                             )
                           ],
                         ),
-                        const Column(
+                        Column(
                           children: [
                             Text(
-                              '07.02',
+                              '${upcomingCompleted.date}',
                               style: AppTextStyes.dateTextStyle,
                             ),
                             Text(
-                              '15:30',
+                              '${upcomingCompleted.time}',
                               style: AppTextStyes.timeTextStyle,
                             )
                           ],
@@ -67,10 +76,11 @@ class UpcomingWomenTeamLists extends StatelessWidget {
                         ),
                         Column(
                           children: [
-                            Image.asset('assets/images/PLBlack2.png'),
+                            Image.asset(
+                                'assets/images/${upcomingCompleted.image2}.png'),
                             AppSized.height5,
-                            const Text(
-                              'Leaque 2. Women',
+                            Text(
+                              upcomingCompleted.text2,
                               style: AppTextStyes.textTextStyle,
                             )
                           ],

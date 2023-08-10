@@ -2,6 +2,7 @@ import 'package:betano/views/menu_view.dart';
 import 'package:flutter/material.dart';
 
 import '../views/table_matches_view.dart';
+import '../views/team_detail_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MenuView(),
         '/TableView': (context) => const TableView(),
+        '/TeamDetailView': (context) => const TeamDetailView(),
       },
     );
   }

@@ -3,19 +3,23 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
+import '../models/upcoming_completed_model.dart';
 
 class CompletedWomenTeamLists extends StatelessWidget {
   const CompletedWomenTeamLists({
     Key? key,
     this.onTap,
+    required this.upcomingCompletedList,
   }) : super(key: key);
   final void Function()? onTap;
+  final List<UpcomingCompleted> upcomingCompletedList;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 50,
+        itemCount: upcomingCompletedList.length,
         itemBuilder: (context, index) {
+          final upcomingCompleted = upcomingCompletedList[index];
           return InkWell(
             onTap: onTap,
             child: Container(
@@ -43,18 +47,19 @@ class CompletedWomenTeamLists extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            Image.asset('assets/images/PlYellow2.png'),
+                            Image.asset(
+                                'assets/images/${upcomingCompleted.image1}.png'),
                             AppSized.height5,
-                            const Text(
-                              'Leaque 2. Women',
+                            Text(
+                              upcomingCompleted.text1,
                               style: AppTextStyes.textTextStyle,
                             )
                           ],
                         ),
-                        const Column(
+                        Column(
                           children: [
                             Text(
-                              '5:4',
+                              upcomingCompleted.goals,
                               style: AppTextStyes.goalsTextStyle,
                             ),
                           ],
@@ -62,10 +67,11 @@ class CompletedWomenTeamLists extends StatelessWidget {
                         ),
                         Column(
                           children: [
-                            Image.asset('assets/images/PLBlack2.png'),
+                            Image.asset(
+                                'assets/images/${upcomingCompleted.image2}.png'),
                             AppSized.height5,
-                            const Text(
-                              'Leaque 2. Women',
+                            Text(
+                              upcomingCompleted.text2,
                               style: AppTextStyes.textTextStyle,
                             )
                           ],
