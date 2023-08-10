@@ -1,5 +1,6 @@
 import 'package:betano/components/choose_sport_button.dart';
 import 'package:betano/constants/app_text_styles.dart';
+import 'package:betano/utils/choose_league_showdialog.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -134,7 +135,8 @@ class _HeadContainerState extends State<HeadContainer> {
                             bgColor: !isHandball ? Colors.white : Colors.orange,
                             onTap: () {
                               toggleHandballVisibility();
-                              chooseLeagueDialog(context);
+                              ChooseLeagueShowDialog.chooseLeagueDialog(
+                                  context);
                             }),
                       ],
                     ),
@@ -182,74 +184,6 @@ class _HeadContainerState extends State<HeadContainer> {
               ),
             ],
           ),
-        );
-      },
-    );
-  }
-
-  void chooseLeagueDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AlertDialog(
-              backgroundColor: const Color(0xffe7e7e7),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              content: Column(
-                children: [
-                  Row(children: [
-                    SizedBox(
-                      width: 23,
-                      child: IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: const Icon(
-                          Icons.arrow_back_ios,
-                        ),
-                        color: AppColors.tabColor,
-                      ),
-                    ),
-                    const Text(
-                      'Back',
-                      style: AppTextStyes.backTextStyle,
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      child: Text(
-                        'Choose League',
-                        style: AppTextStyes.leagueTextStyle,
-                      ),
-                    ),
-                  ]),
-                  SizedBox(
-                    width: 270,
-                    height: 456,
-                    child: ListView.builder(
-                        itemCount: shooseLeague.length,
-                        itemBuilder: (context, index) {
-                          final choose = shooseLeague[index];
-                          return SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                    'assets/images/${choose.image}.png'),
-                                title: Text(choose.text),
-                              ),
-                            ),
-                          );
-                        }),
-                  ),
-                ],
-              ),
-            ),
-          ],
         );
       },
     );

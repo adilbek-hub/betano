@@ -1,16 +1,21 @@
+import 'package:betano/utils/app_showsdialog.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
 import '../models/choose_league_model.dart';
 import '../models/league_women.dart';
 import 'league2womenList.dart';
 
-class TableBody extends StatelessWidget {
+class TableBody extends StatefulWidget {
   const TableBody({
     super.key,
   });
 
+  @override
+  State<TableBody> createState() => _TableBodyState();
+}
+
+class _TableBodyState extends State<TableBody> {
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -28,7 +33,10 @@ class TableBody extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: Padding(
               padding: const EdgeInsets.only(right: 10),
-              child: Image.asset('assets/images/i.png'),
+              child: InkWell(
+                onTap: () => AppShowDialogs.showMyDialog(context),
+                child: Image.asset('assets/images/i.png'),
+              ),
             ),
           ),
           const Divider(

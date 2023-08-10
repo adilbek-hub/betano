@@ -47,4 +47,24 @@ class AppTextStyes {
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );
+  static const dateTextStyle = TextStyle(
+    color: Color(0xffa3a3a3),
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+  static const timeTextStyle = TextStyle(
+    color: Color(0xff595959),
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
+  static const textTextStyle = TextStyle(
+    color: Color(0xff595959),
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+  );
+  static const goalsTextStyle = TextStyle(
+    color: Color(0xff595959),
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+  );
 }
