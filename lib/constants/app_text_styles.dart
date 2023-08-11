@@ -67,4 +67,14 @@ class AppTextStyes {
     fontSize: 14,
     fontWeight: FontWeight.w600,
   );
+  static const detail = TextStyle(
+    color: Color(0xfff16721),
+    fontSize: 12,
+    fontWeight: FontWeight.w600,
+  );
+  static const detail2 = TextStyle(
+    color: Color(0xff444444),
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+  );
 }

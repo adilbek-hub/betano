@@ -1,22 +1,26 @@
 class UpcomingCompleted {
   const UpcomingCompleted({
-    required this.image1,
-    required this.image2,
-    required this.text1,
-    required this.text2,
-    required this.goals,
+    this.image1,
+    this.image2,
+    this.text1,
+    this.text2,
+    this.goals,
     this.date,
     this.time,
     this.alarm,
+    this.text3,
+    this.text4,
   });
-  final String image1;
-  final String image2;
-  final String text1;
-  final String text2;
-  final String goals;
+  final String? image1;
+  final String? image2;
+  final String? text1;
+  final String? text2;
+  final String? goals;
   final String? date;
   final String? time;
   final String? alarm;
+  final String? text3;
+  final String? text4;
 }
 
 const league1 = UpcomingCompleted(
@@ -81,6 +85,35 @@ const league6 = UpcomingCompleted(
   alarm: 'alarm',
 );
 
+const stadium = UpcomingCompleted(
+  text3: 'Stadium',
+  text4: 'Al Banat Haimi Pos da Reteo',
+);
+const city = UpcomingCompleted(
+  text3: 'City',
+  text4: 'Malanda',
+);
+const capacity = UpcomingCompleted(
+  text3: 'Capacity',
+  text4: '120 000',
+);
+const country = UpcomingCompleted(
+  text3: 'Country',
+  text4: 'Korooco',
+);
+const homePosition = UpcomingCompleted(
+  text3: 'Home position',
+  text4: '4',
+);
+const awayPosition = UpcomingCompleted(
+  text3: 'Away position',
+  text4: '4',
+);
+const bestsOfSets = UpcomingCompleted(
+  text3: 'Bests of sets',
+  text4: '5',
+);
+
 List<UpcomingCompleted> upcomingCompletedList = [
   league1,
   league2,
@@ -88,4 +121,13 @@ List<UpcomingCompleted> upcomingCompletedList = [
   league4,
   league5,
   league6,
+];
+List<UpcomingCompleted> detailWomenValeyballPlaceList = [
+  stadium,
+  city,
+  capacity,
+  country,
+  homePosition,
+  awayPosition,
+  bestsOfSets,
 ];

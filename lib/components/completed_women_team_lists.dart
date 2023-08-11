@@ -51,7 +51,7 @@ class CompletedWomenTeamLists extends StatelessWidget {
                                 'assets/images/${upcomingCompleted.image1}.png'),
                             AppSized.height5,
                             Text(
-                              upcomingCompleted.text1,
+                              '${upcomingCompleted.text1}',
                               style: AppTextStyes.textTextStyle,
                             )
                           ],
@@ -59,7 +59,7 @@ class CompletedWomenTeamLists extends StatelessWidget {
                         Column(
                           children: [
                             Text(
-                              upcomingCompleted.goals,
+                              '${upcomingCompleted.goals}',
                               style: AppTextStyes.goalsTextStyle,
                             ),
                           ],
@@ -71,7 +71,7 @@ class CompletedWomenTeamLists extends StatelessWidget {
                                 'assets/images/${upcomingCompleted.image2}.png'),
                             AppSized.height5,
                             Text(
-                              upcomingCompleted.text2,
+                              '${upcomingCompleted.text2}',
                               style: AppTextStyes.textTextStyle,
                             )
                           ],

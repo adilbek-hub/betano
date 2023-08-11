@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const MenuView(),
         '/TableView': (context) => const TableView(),
-        '/TeamDetailView': (context) => const TeamDetailView(),
+        '/TeamDetailView': (context) => TeamDetailView(),
       },
     );
   }
