@@ -7,10 +7,11 @@ import '../constants/app_text_styles.dart';
 import '../models/upcoming_completed_model.dart';
 
 class TeamDetailView extends StatelessWidget {
-  TeamDetailView({
+  const TeamDetailView({
     Key? key,
+    required this.selectedItem,
   }) : super(key: key);
-  final List<UpcomingCompleted> upcomingCompleted = upcomingCompletedList;
+  final UpcomingCompleted selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,9 @@ class TeamDetailView extends StatelessWidget {
                     Row(
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                           icon: const Icon(
                             Icons.arrow_back_ios,
                             size: 18,
@@ -75,10 +78,10 @@ class TeamDetailView extends StatelessWidget {
                                 Column(
                                   children: [
                                     Image.asset(
-                                        'assets/images/${upcomingCompleted[0].image1}.png'),
+                                        'assets/images/${selectedItem.image1}.png'),
                                     AppSized.height5,
                                     Text(
-                                      '${upcomingCompleted[0].text1}',
+                                      '${selectedItem.text1}',
                                       style: AppTextStyes.textTextStyle,
                                     )
                                   ],
@@ -86,7 +89,7 @@ class TeamDetailView extends StatelessWidget {
                                 Column(
                                   children: [
                                     Text(
-                                      '${upcomingCompleted[0].goals}',
+                                      '${selectedItem.goals}',
                                       style: AppTextStyes.goalsTextStyle,
                                     ),
                                   ],
@@ -95,10 +98,10 @@ class TeamDetailView extends StatelessWidget {
                                 Column(
                                   children: [
                                     Image.asset(
-                                        'assets/images/${upcomingCompleted[0].image2}.png'),
+                                        'assets/images/${selectedItem.image2}.png'),
                                     AppSized.height5,
                                     Text(
-                                      '${upcomingCompleted[0].text2}',
+                                      '${selectedItem.text2}',
                                       style: AppTextStyes.textTextStyle,
                                     ),
                                   ],

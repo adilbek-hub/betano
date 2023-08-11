@@ -11,7 +11,6 @@ class DetailsValleyballWomenPlace extends StatelessWidget {
       detailWomenValeyballPlaceList;
   @override
   Widget build(BuildContext context) {
-    bool notNull = true;
     return Expanded(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),

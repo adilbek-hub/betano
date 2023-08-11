@@ -4,6 +4,7 @@ import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
 import '../models/upcoming_completed_model.dart';
+import '../views/team_detail_view.dart';
 
 class CompletedWomenTeamLists extends StatelessWidget {
   const CompletedWomenTeamLists({
@@ -21,7 +22,15 @@ class CompletedWomenTeamLists extends StatelessWidget {
         itemBuilder: (context, index) {
           final upcomingCompleted = upcomingCompletedList[index];
           return InkWell(
-            onTap: onTap,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      TeamDetailView(upcomingCompletedItem: upcomingCompleted),
+                ),
+              );
+            },
             child: Container(
               margin: const EdgeInsets.only(
                 left: 20,
