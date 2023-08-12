@@ -6,10 +6,10 @@ import '../components/broadcast.dart';
 import '../components/choice_in_head_container.dart';
 import '../components/choose_sport_button.dart';
 import '../components/detail_valeyball_women_place.dart';
+import '../components/in_completed_teams_goals.dart';
 import '../components/to_back.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
-import '../constants/app_text_styles.dart';
 import '../models/upcoming_completed_model.dart';
 
 class TeamDetailView extends StatelessWidget {
@@ -89,6 +89,8 @@ class TeamDetailView extends StatelessWidget {
                 child: Column(
                   children: [
                     const ToBack(),
+                    InCompletedTeamsGoals(
+                        upcomingCompletedItem: upcomingCompletedItem),
                     AppSized.height20,
                     DetailsValleyballWomenPlace(),
                   ],

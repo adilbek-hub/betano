@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../example.dart';
 import '../models/upcoming_completed_model.dart';
+import '../views/duels_detail_view.dart';
 import '../views/table_matches_view.dart';
 import '../views/team_detail_view.dart';
 
@@ -19,8 +20,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => /* const Example(),*/ MenuView(),
+        '/': (context) => const MenuView(),
         '/TableView': (context) => const TableView(),
+        // '/DuelsDetailView': (context) =>  DuelsDetailView(upcomingCompletedItem: upcomingCompleted,),
       },
     );
   }

@@ -1,3 +1,4 @@
+import 'package:betano/views/duels_detail_view.dart';
 import 'package:betano/views/team_detail_view2.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class UpcomingWomenTeamLists extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-          itemCount: 50,
+          itemCount: upcomingCompletedList.length,
           itemBuilder: (context, index) {
             final upcomingCompleted = upcomingCompletedList[index];
             return InkWell(
@@ -26,8 +27,9 @@ class UpcomingWomenTeamLists extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TeamDetailView2(
-                        upcomingCompletedItem: upcomingCompleted),
+                    builder: (context) => DuelsDetailView(
+                      upcomingCompleted: upcomingCompleted,
+                    ),
                   ),
                 );
               },
