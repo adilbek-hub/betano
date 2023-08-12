@@ -6,7 +6,7 @@ import '../constants/app_text_styles.dart';
 import '../models/upcoming_completed_model.dart';
 import '../views/team_detail_view.dart';
 
-class CompletedWomenTeamLists extends StatelessWidget {
+class CompletedWomenTeamLists extends StatefulWidget {
   const CompletedWomenTeamLists({
     Key? key,
     this.onTap,
@@ -14,20 +14,31 @@ class CompletedWomenTeamLists extends StatelessWidget {
   }) : super(key: key);
   final void Function()? onTap;
   final List<UpcomingCompleted> upcomingCompletedList;
+
+  @override
+  State<CompletedWomenTeamLists> createState() =>
+      _CompletedWomenTeamListsState();
+}
+
+class _CompletedWomenTeamListsState extends State<CompletedWomenTeamLists> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: upcomingCompletedList.length,
+        itemCount: widget.upcomingCompletedList.length,
         itemBuilder: (context, index) {
-          final upcomingCompleted = upcomingCompletedList[index];
+          final upcomingCompleted = widget.upcomingCompletedList[index];
           return InkWell(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      TeamDetailView(upcomingCompletedItem: upcomingCompleted),
+                  builder: (context) => TeamDetailView(
+                    upcomingCompletedItem: upcomingCompleted,
+                    set123List: set123List,
+                    detailWomenValeyballPlaceList:
+                        detailWomenValeyballPlaceList,
+                  ),
                 ),
               );
             },

@@ -10,6 +10,8 @@ class UpcomingCompleted {
     this.alarm,
     this.text3,
     this.text4,
+    this.num1,
+    this.num2,
   });
   final String? image1;
   final String? image2;
@@ -21,6 +23,8 @@ class UpcomingCompleted {
   final String? alarm;
   final String? text3;
   final String? text4;
+  final int? num1;
+  final int? num2;
 }
 
 const league1 = UpcomingCompleted(
@@ -84,6 +88,14 @@ const league6 = UpcomingCompleted(
   time: '11:30',
   alarm: 'alarm',
 );
+List<UpcomingCompleted> upcomingCompletedList = [
+  league1,
+  league2,
+  league3,
+  league4,
+  league5,
+  league6,
+];
 
 const stadium = UpcomingCompleted(
   text3: 'Stadium',
@@ -114,14 +126,6 @@ const bestsOfSets = UpcomingCompleted(
   text4: '5',
 );
 
-List<UpcomingCompleted> upcomingCompletedList = [
-  league1,
-  league2,
-  league3,
-  league4,
-  league5,
-  league6,
-];
 List<UpcomingCompleted> detailWomenValeyballPlaceList = [
   stadium,
   city,
@@ -130,4 +134,59 @@ List<UpcomingCompleted> detailWomenValeyballPlaceList = [
   homePosition,
   awayPosition,
   bestsOfSets,
+];
+
+const set1 = UpcomingCompleted(num1: 14, text1: '1 Set', num2: 4);
+const set2 = UpcomingCompleted(num1: 14, text1: '2 Set', num2: 6);
+const set3 = UpcomingCompleted(num1: 17, text1: '3 Set', num2: 12);
+const pointsWonOnServe =
+    UpcomingCompleted(num1: 14, text1: 'Points won on serve', num2: 22);
+const longestStreak =
+    UpcomingCompleted(num1: 14, text1: 'Longest streak', num2: 22);
+
+List<UpcomingCompleted> set123List = [
+  set1,
+  set2,
+  set3,
+  pointsWonOnServe,
+  longestStreak,
+];
+const broadcast1 = UpcomingCompleted(text1: 'Match text broadcast');
+
+const broadcast2 = UpcomingCompleted(
+  text2: '12’',
+  text3:
+      '- et dolore sed laoreet eros wisi feugait facilisi. ut veniam, luptatum',
+);
+
+const broadcast3 = UpcomingCompleted(
+  text2: '16’',
+  text3: 'augue exerci te illum esse facilisis consequat, Duis in odio nonummy',
+);
+
+const broadcast4 = UpcomingCompleted(
+  text2: '22’',
+  text3:
+      'volutpat. eum diam odio aliquam wisi Duis ullamcorper hendrerit ipsum consequat.',
+);
+
+const broadcast5 = UpcomingCompleted(
+  text2: '27’',
+  text3:
+      'consequat, nulla commodo feugiat dignissim delenit amet, Ut magna erat zzril',
+);
+
+const broadcast6 = UpcomingCompleted(
+  text2: '31’',
+  text3:
+      '- et dolore sed laoreet eros wisi feugait facilisi. ut veniam, luptatum',
+);
+
+List<UpcomingCompleted> broadcastList = [
+  broadcast1,
+  broadcast2,
+  broadcast3,
+  broadcast4,
+  broadcast5,
+  broadcast6,
 ];

@@ -11,7 +11,8 @@ class DetailsValleyballWomenPlace extends StatelessWidget {
       detailWomenValeyballPlaceList;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 400,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: GridView.builder(
