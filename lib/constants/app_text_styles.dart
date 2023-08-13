@@ -77,4 +77,9 @@ class AppTextStyes {
     fontSize: 12,
     fontWeight: FontWeight.w500,
   );
+  static const duels = TextStyle(
+    fontSize: 13,
+    fontWeight: FontWeight.w500,
+    color: AppColors.tabColor,
+  );
 }

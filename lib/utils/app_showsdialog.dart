@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/table_rows.dart';
 import '../constants/app_colors.dart';
-import '../constants/app_text_styles.dart';
 
 class AppShowDialogs {
   static Future<void> showMyDialog(context) async {

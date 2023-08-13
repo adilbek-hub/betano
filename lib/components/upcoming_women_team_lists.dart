@@ -1,9 +1,6 @@
 import 'package:betano/views/duels_detail_view.dart';
-import 'package:betano/views/team_detail_view2.dart';
 import 'package:flutter/material.dart';
-
 import 'package:betano/models/upcoming_completed_model.dart';
-
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
