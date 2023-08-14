@@ -1,12 +1,15 @@
 import 'package:betano/components/choose_sport_button.dart';
+import 'package:betano/components/upcoming_women_team_lists.dart';
 import 'package:betano/constants/app_text_styles.dart';
 import 'package:betano/utils/choose_league_showdialog.dart';
+import 'package:betano/views/remind_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants/app_colors.dart';
 
 import '../models/choose_league_model.dart';
+import '../models/upcoming_completed_model.dart';
 import 'choice_in_head_container.dart';
 import 'choose_card.dart';
 
@@ -218,16 +221,23 @@ class _HeadContainerState extends State<HeadContainer> {
                         showAboutDialog(context);
                       }),
                   ChoiceInHeadContainer(
-                    bgColor: !isSecond ? Colors.transparent : Colors.orange,
-                    borderColor: !isSecond ? Colors.white : Colors.orange,
-                    text: 'Remind',
-                    style: GoogleFonts.roboto(
-                      color: !isSecond ? Colors.white : Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    onTap: toggleRemindVisibility,
-                  ),
+                      bgColor: !isSecond ? Colors.transparent : Colors.orange,
+                      borderColor: !isSecond ? Colors.white : Colors.orange,
+                      text: 'Remind',
+                      style: GoogleFonts.roboto(
+                        color: !isSecond ? Colors.white : Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      onTap: () {
+                        toggleRemindVisibility();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RemindView(),
+                          ),
+                        );
+                      }),
                   ChoiceInHeadContainer(
                     bgColor: !isThird ? Colors.transparent : Colors.orange,
                     borderColor: !isThird ? Colors.white : Colors.orange,

@@ -19,7 +19,7 @@ class _MenuViewState extends State<MenuView> {
         children: [
           const HeadContainer(),
           Expanded(
-            flex: 3,
+            flex: 4,
             child: Container(
               decoration: const BoxDecoration(
                 color: AppColors.white,

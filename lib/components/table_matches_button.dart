@@ -46,7 +46,7 @@ class _TableMatchesButtonState extends State<TableMatchesButton> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      flex: 3,
+      flex: 4,
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
