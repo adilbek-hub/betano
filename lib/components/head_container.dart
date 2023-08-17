@@ -234,7 +234,9 @@ class _HeadContainerState extends State<HeadContainer> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const RemindView(),
+                            builder: (context) => RemindView(
+                              upcomingCompletedList: upcomingCompletedList,
+                            ),
                           ),
                         );
                       }),

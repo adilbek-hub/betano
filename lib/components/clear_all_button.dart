@@ -1,9 +1,45 @@
 import 'package:flutter/material.dart';
 
-class ClearAllButton extends StatelessWidget {
+import '../models/upcoming_completed_model.dart';
+
+class ClearAllButton extends StatefulWidget {
   const ClearAllButton({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<ClearAllButton> createState() => _ClearAllButtonState();
+}
+
+class _ClearAllButtonState extends State<ClearAllButton> {
+  void clearAllItems() {
+    setState(() {});
+  }
+
+  Future<void> showClearAllDialog(
+    BuildContext context,
+  ) async {
+    return showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text('Clear All'),
+            content: const Text('Are you sure you want to clear all items?'),
+            actions: <Widget>[
+              TextButton(
+                child: const Text('Cancel'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+              TextButton(
+                child: Text('Yes'),
+                onPressed: () {},
+              ),
+            ],
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +48,9 @@ class ClearAllButton extends StatelessWidget {
       child: Align(
         alignment: Alignment.centerRight,
         child: GestureDetector(
+          onTap: () {
+            showClearAllDialog(context);
+          },
           child: const Text(
             'Clear all',
             style: TextStyle(

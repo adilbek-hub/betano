@@ -5,10 +5,10 @@ import '../models/upcoming_completed_model.dart';
 
 part 'betano_state.dart';
 
-class ContainerEvent {
-  final int indexToRemove;
-  ContainerEvent(this.indexToRemove);
-}
+// class ContainerEvent {
+//   final int indexToRemove;
+//   ContainerEvent(this.indexToRemove);
+// }
 
 class BetanoCubit extends Cubit<List<UpcomingCompleted>> {
   BetanoCubit() : super([]);
