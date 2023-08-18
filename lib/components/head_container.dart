@@ -10,6 +10,7 @@ import '../constants/app_colors.dart';
 
 import '../models/choose_league_model.dart';
 import '../models/upcoming_completed_model.dart';
+import '../views/options_view.dart';
 import 'choice_in_head_container.dart';
 import 'choose_card.dart';
 
@@ -241,16 +242,23 @@ class _HeadContainerState extends State<HeadContainer> {
                         );
                       }),
                   ChoiceInHeadContainer(
-                    bgColor: !isThird ? Colors.transparent : Colors.orange,
-                    borderColor: !isThird ? Colors.white : Colors.orange,
-                    text: 'Options',
-                    style: GoogleFonts.roboto(
-                      color: !isThird ? Colors.white : Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                    onTap: toggleOptionsVisibility,
-                  ),
+                      bgColor: !isThird ? Colors.transparent : Colors.orange,
+                      borderColor: !isThird ? Colors.white : Colors.orange,
+                      text: 'Options',
+                      style: GoogleFonts.roboto(
+                        color: !isThird ? Colors.white : Colors.black,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      onTap: () {
+                        toggleOptionsVisibility();
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const OptionView(),
+                          ),
+                        );
+                      }),
                 ],
               ),
               const ChooseSportButton(
