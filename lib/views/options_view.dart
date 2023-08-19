@@ -214,7 +214,30 @@ class ClearAllRemindsButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(6),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return Center(
+              child: Column(
+                children: [
+                  SimpleDialog(
+                    insetPadding: EdgeInsets.symmetric(horizontal: 20),
+                    contentPadding: EdgeInsets.all(20),
+                    children: [
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height / 4,
+                      ),
+                    ],
+                  ),
+                  ElevatedButton(onPressed: () {}, child: Text('data'))
+                ],
+              ),
+            );
+          },
+        );
+      },
       child: const Text(
         'Clear all reminds',
         style: TextStyle(
