@@ -56,11 +56,14 @@ class ChooseLeagueShowDialog {
                           final choose = shooseLeague[index];
                           return SizedBox(
                             width: MediaQuery.of(context).size.width,
-                            child: Card(
-                              child: ListTile(
-                                leading: Image.asset(
-                                    'assets/images/${choose.image}.png'),
-                                title: Text(choose.text),
+                            child: InkWell(
+                              onTap: () {},
+                              child: Card(
+                                child: ListTile(
+                                  leading: Image.asset(
+                                      'assets/images/${choose.image}.png'),
+                                  title: Text(choose.text),
+                                ),
                               ),
                             ),
                           );

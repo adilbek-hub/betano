@@ -2,18 +2,107 @@ import 'package:flutter/material.dart';
 
 import 'package:betano/constants/app_colors.dart';
 import 'package:betano/constants/app_sized.dart';
+import 'package:betano/constants/app_texts.dart';
 
+import '../components/choose_card.dart';
 import '../components/custom_button.dart';
 import '../components/head_container.dart';
+import '../constants/app_text_styles.dart';
+import '../models/choose_league_model.dart';
+import '../utils/choose_league_showdialog.dart';
 
 class OptionView extends StatefulWidget {
-  const OptionView({super.key});
+  const OptionView({
+    Key? key,
+    required this.shooseLeagueList,
+  }) : super(key: key);
+  final List<ChooseLeague> shooseLeagueList;
 
   @override
   State<OptionView> createState() => _OptionViewState();
 }
 
 class _OptionViewState extends State<OptionView> {
+  String chooseLeagueText = 'Choose League';
+  bool alertSelected = true;
+
+  void chooseLeagueDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            AlertDialog(
+              backgroundColor: const Color(0xffe7e7e7),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              content: Column(
+                children: [
+                  Row(children: [
+                    SizedBox(
+                      width: 23,
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back_ios,
+                        ),
+                        color: AppColors.tabColor,
+                      ),
+                    ),
+                    const Text(
+                      'Back',
+                      style: AppTextStyes.backTextStyle,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text(
+                        'Choose League',
+                        style: AppTextStyes.leagueTextStyle,
+                      ),
+                    ),
+                  ]),
+                  SizedBox(
+                    width: 270,
+                    height: 456,
+                    child: ListView.builder(
+                        itemCount: shooseLeague.length,
+                        itemBuilder: (context, index) {
+                          final choose = shooseLeague[index];
+                          return SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  chooseLeagueText = choose.text;
+                                  alertSelected = false;
+                                });
+                                Navigator.pop(context);
+                              },
+                              child: Card(
+                                child: ListTile(
+                                  leading: Image.asset(
+                                      'assets/images/${choose.image}.png'),
+                                  title: Text(choose.text),
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,21 +120,21 @@ class _OptionViewState extends State<OptionView> {
                 fit: BoxFit.cover,
               ),
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                OptionsCard(
+                const OptionsCard(
                   text: 'Sound',
                 ),
-                OptionsCard(
+                const OptionsCard(
                   text: 'Calendar \nsynchronization',
                 ),
-                OptionsCard(
+                const OptionsCard(
                   text: 'Notifications',
                 ),
                 Column(
                   children: [
-                    Text(
+                    const Text(
                       'Starting League',
                       style: TextStyle(
                         color: Color(0xff030303),
@@ -54,10 +143,49 @@ class _OptionViewState extends State<OptionView> {
                       ),
                     ),
                     AppSized.height15,
-                    OutLineButton(),
+                    alertSelected
+                        ? OutlinedButton(
+                            style: OutlinedButton.styleFrom(
+                              fixedSize: const Size(320, 48),
+                              side: const BorderSide(
+                                color: AppColors.tabColor,
+                                width: 2,
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                            ),
+                            onPressed: () {
+                              chooseLeagueDialog(context);
+                            },
+                            child: Text(chooseLeagueText,
+                                style: const TextStyle(
+                                  color: AppColors.tabColor,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                )),
+                          )
+                        : ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 0,
+                              fixedSize: const Size(320, 48),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                            ),
+                            onPressed: () {
+                              chooseLeagueDialog(context);
+                            },
+                            child: Text(chooseLeagueText,
+                                style: const TextStyle(
+                                  color: Color(0xff8d8d8d),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                )),
+                          ),
                   ],
                 ),
-                ClearAllRemindsButton(),
+                const ClearAllRemindsButton(),
               ],
             ),
           ),
@@ -117,7 +245,9 @@ class OutLineButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(6),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        ChooseLeagueShowDialog.chooseLeagueDialog(context);
+      },
       child: const Text(
         'Choose league',
         style: TextStyle(

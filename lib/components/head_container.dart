@@ -255,7 +255,9 @@ class _HeadContainerState extends State<HeadContainer> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const OptionView(),
+                            builder: (context) => OptionView(
+                              shooseLeagueList: shooseLeagueList,
+                            ),
                           ),
                         );
                       }),
