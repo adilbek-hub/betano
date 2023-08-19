@@ -7,6 +7,7 @@ import 'package:betano/constants/app_texts.dart';
 import '../components/choose_card.dart';
 import '../components/custom_button.dart';
 import '../components/head_container.dart';
+import '../components/table_rows.dart';
 import '../constants/app_text_styles.dart';
 import '../models/choose_league_model.dart';
 import '../utils/choose_league_showdialog.dart';
@@ -25,6 +26,11 @@ class OptionView extends StatefulWidget {
 class _OptionViewState extends State<OptionView> {
   String chooseLeagueText = 'Choose League';
   bool alertSelected = true;
+  void onButton() {
+    setState(() {
+      alertSelected = !alertSelected;
+    });
+  }
 
   void chooseLeagueDialog(BuildContext context) {
     showDialog(
@@ -216,27 +222,88 @@ class ClearAllRemindsButton extends StatelessWidget {
       ),
       onPressed: () {
         showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return Center(
-              child: Column(
+            context: context,
+            builder: (context) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SimpleDialog(
-                    insetPadding: EdgeInsets.symmetric(horizontal: 20),
-                    contentPadding: EdgeInsets.all(20),
+                  AlertDialog(
+                    backgroundColor: const Color(0xffFFFFFF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    insetPadding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                    ),
+                    title: const Column(
+                      children: [
+                        Text(
+                          "Info",
+                          style: TextStyle(
+                            color: Color(0xff313131),
+                            fontSize: 21,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          'Are you sure that you want ot delete all your reminds?',
+                          style: TextStyle(
+                            color: Color(0xff404040),
+                            fontSize: 17,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                    content: Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 4,
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          'Yes',
+                          style: TextStyle(
+                            color: Color(0xffffffff),
+                            fontSize: 21,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.tabColor,
+                          fixedSize: const Size(152, 65),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text(
+                          'No Back',
+                          style: TextStyle(
+                            color: Color(0xff474747),
+                            fontSize: 21,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
                       ),
                     ],
                   ),
-                  ElevatedButton(onPressed: () {}, child: Text('data'))
                 ],
-              ),
-            );
-          },
-        );
+              );
+            });
       },
       child: const Text(
         'Clear all reminds',
@@ -306,9 +373,9 @@ class OptionsCard extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 18),
           child: Row(
             children: [
-              OnOffButton(text: 'ON', color: AppColors.tabColor),
+              CustomsButton(text: 'ON', color: AppColors.tabColor),
               SizedBox(width: 10),
-              OnOffButton(text: 'OFF', color: AppColors.black2),
+              CustomsButton(text: 'OFF', color: AppColors.black2),
             ],
           ),
         ),
@@ -317,8 +384,8 @@ class OptionsCard extends StatelessWidget {
   }
 }
 
-class OnOffButton extends StatelessWidget {
-  const OnOffButton({
+class CustomsButton extends StatelessWidget {
+  const CustomsButton({
     Key? key,
     required this.text,
     required this.color,
