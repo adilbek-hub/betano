@@ -191,7 +191,120 @@ class _OptionViewState extends State<OptionView> {
                           ),
                   ],
                 ),
-                const ClearAllRemindsButton(),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.tabColor,
+                    fixedSize: const Size(320, 48),
+                    side: const BorderSide(
+                      color: AppColors.tabColor,
+                      width: 2,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AlertDialog(
+                                backgroundColor: const Color(0xffFFFFFF),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                insetPadding: const EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                ),
+                                title: const Column(
+                                  children: [
+                                    Text(
+                                      "Info",
+                                      style: TextStyle(
+                                        color: Color(0xff313131),
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    Text(
+                                      'Are you sure that you want ot delete all your reminds?',
+                                      style: TextStyle(
+                                        color: Color(0xff404040),
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ],
+                                ),
+                                content: Container(
+                                  width: MediaQuery.of(context).size.width,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  TextButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        alertSelected = true;
+                                        chooseLeagueText = 'Choose League';
+                                      });
+
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Text(
+                                      'Yes',
+                                      style: TextStyle(
+                                        color: Color(0xffffffff),
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppColors.tabColor,
+                                      fixedSize: const Size(152, 65),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: const Text(
+                                      'No Back',
+                                      style: TextStyle(
+                                        color: Color(0xff474747),
+                                        fontSize: 21,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          );
+                        });
+                  },
+                  child: const Text(
+                    'Clear all reminds',
+                    style: TextStyle(
+                      color: AppColors.black1,
+                      fontSize: 21,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
@@ -203,8 +316,8 @@ class _OptionViewState extends State<OptionView> {
 
 class ClearAllRemindsButton extends StatelessWidget {
   const ClearAllRemindsButton({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -350,12 +463,32 @@ class OutLineButton extends StatelessWidget {
   }
 }
 
-class OptionsCard extends StatelessWidget {
+class OptionsCard extends StatefulWidget {
   const OptionsCard({
     Key? key,
     required this.text,
   }) : super(key: key);
   final String text;
+
+  @override
+  State<OptionsCard> createState() => _OptionsCardState();
+}
+
+class _OptionsCardState extends State<OptionsCard> {
+  Color buttonColor1 = const Color(0xff9b9b9b);
+  Color buttonColor2 = const Color(0xff9b9b9b);
+
+  void changeButtonColors(int buttonNumber) {
+    setState(() {
+      if (buttonNumber == 1) {
+        buttonColor1 = AppColors.tabColor;
+        buttonColor2 = const Color(0xff9b9b9b);
+      } else if (buttonNumber == 2) {
+        buttonColor1 = const Color(0xff9b9b9b);
+        buttonColor2 = AppColors.tabColor;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -365,17 +498,29 @@ class OptionsCard extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Text(
-            text,
+            widget.text,
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 18),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Row(
             children: [
-              CustomsButton(text: 'ON', color: AppColors.tabColor),
-              SizedBox(width: 10),
-              CustomsButton(text: 'OFF', color: AppColors.black2),
+              CustomsButton(
+                text: 'ON',
+                color: buttonColor1,
+                onPressed: () {
+                  changeButtonColors(1);
+                },
+              ),
+              const SizedBox(width: 10),
+              CustomsButton(
+                text: 'OFF',
+                color: buttonColor2,
+                onPressed: () {
+                  changeButtonColors(2);
+                },
+              ),
             ],
           ),
         ),
@@ -389,27 +534,31 @@ class CustomsButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.color,
+    this.onPressed,
   }) : super(key: key);
   final String text;
   final Color color;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 80,
-      height: 30,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.circular(30),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        fixedSize: const Size(80, 30),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
       ),
-      child: Center(
-          child: Text(
+      onPressed: onPressed,
+      child: Text(
         text,
         style: const TextStyle(
+          color: Colors.black,
           fontSize: 14,
           fontWeight: FontWeight.w500,
         ),
-      )),
+      ),
     );
   }
 }

@@ -209,8 +209,9 @@ class _HeadContainerState extends State<HeadContainer> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ChoiceInHeadContainer(
-                      bgColor: !isFirst ? Colors.transparent : Colors.orange,
-                      borderColor: !isFirst ? Colors.white : Colors.orange,
+                      bgColor:
+                          !isFirst ? Colors.transparent : AppColors.tabColor,
+                      borderColor: !isFirst ? Colors.white : AppColors.tabColor,
                       text: 'Category',
                       style: GoogleFonts.roboto(
                         color: !isFirst ? Colors.white : Colors.black,
@@ -222,8 +223,11 @@ class _HeadContainerState extends State<HeadContainer> {
                         showAboutDialog(context);
                       }),
                   ChoiceInHeadContainer(
-                      bgColor: !isSecond ? Colors.transparent : Colors.orange,
-                      borderColor: !isSecond ? Colors.white : Colors.orange,
+                      bgColor: !isSecond
+                          ? Colors.transparent
+                          : const Color(0xfff16721),
+                      borderColor:
+                          !isSecond ? Colors.white : AppColors.tabColor,
                       text: 'Remind',
                       style: GoogleFonts.roboto(
                         color: !isSecond ? Colors.white : Colors.black,
@@ -242,8 +246,9 @@ class _HeadContainerState extends State<HeadContainer> {
                         );
                       }),
                   ChoiceInHeadContainer(
-                      bgColor: !isThird ? Colors.transparent : Colors.orange,
-                      borderColor: !isThird ? Colors.white : Colors.orange,
+                      bgColor:
+                          !isThird ? Colors.transparent : AppColors.tabColor,
+                      borderColor: !isThird ? Colors.white : AppColors.tabColor,
                       text: 'Options',
                       style: GoogleFonts.roboto(
                         color: !isThird ? Colors.white : Colors.black,
@@ -264,8 +269,8 @@ class _HeadContainerState extends State<HeadContainer> {
                 ],
               ),
               const ChooseSportButton(
-                image: 'assets/images/whiteValeyballBall.png',
-                text: 'Valleyball',
+                // image: 'assets/images/whiteValeyballBall.png',
+                text: 'Choose sport',
               ),
             ],
           ),

@@ -31,7 +31,7 @@ class _ChooseSportButtonState extends State<ChooseSportButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('${widget.image}'),
+            // Image.asset('${widget.image ?? ''}'),
             AppSized.width5,
             Text(
               widget.text,
