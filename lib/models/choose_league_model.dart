@@ -31,3 +31,23 @@ List<ChooseLeague> shooseLeagueList = [
   sitInLeague,
   dignissimMolestieLeague,
 ];
+
+class FourViewSport {
+  const FourViewSport({
+    required this.valeyball,
+    required this.handball,
+    required this.valeyballWomen,
+    required this.handballWomen,
+  });
+  final String valeyball;
+  final String handball;
+  final String valeyballWomen;
+  final String handballWomen;
+}
+
+const view1 = FourViewSport(
+  valeyball: 'Valeyball',
+  handball: 'Handball',
+  valeyballWomen: 'Valeyball Women',
+  handballWomen: 'Handball Women',
+);

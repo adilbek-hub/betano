@@ -1,15 +1,18 @@
-import 'package:betano/constants/app_sized.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:betano/constants/app_sized.dart';
+import 'package:betano/models/choose_league_model.dart';
+
 class ChooseSportButton extends StatefulWidget {
   const ChooseSportButton({
-    super.key,
-    required this.text,
+    Key? key,
     this.image,
-  });
+    required this.text,
+  }) : super(key: key);
   final String? image;
   final String text;
+
   @override
   State<ChooseSportButton> createState() => _ChooseSportButtonState();
 }

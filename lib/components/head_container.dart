@@ -95,7 +95,9 @@ class _HeadContainerState extends State<HeadContainer> {
 
 //ChooseLeague
   List<ChooseLeague> shooseLeague = shooseLeagueList;
+  FourViewSport fourViewSport = view1;
 
+  String displayedInfo = 'Спорт';
   void showAboutDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -126,22 +128,28 @@ class _HeadContainerState extends State<HeadContainer> {
                       children: [
                         ChooseCard(
                             image: 'assets/images/ballValeyball.png',
-                            text1: 'Valeyball',
+                            text1: view1.valeyball,
                             bgColor:
                                 !isValeyball ? Colors.white : Colors.orange,
                             onTap: () {
                               toggleValleyballVisibility();
                               Navigator.pushNamed(context, '/TableView');
+                              setState(() {
+                                displayedInfo = view1.valeyball;
+                              });
                             }),
                         ChooseCard(
-                            image: 'assets/images/bollHandball.png',
-                            text1: 'Handball',
-                            bgColor: !isHandball ? Colors.white : Colors.orange,
-                            onTap: () {
-                              toggleHandballVisibility();
-                              ChooseLeagueShowDialog.chooseLeagueDialog(
-                                  context);
-                            }),
+                          image: 'assets/images/bollHandball.png',
+                          text1: view1.handball,
+                          bgColor: !isHandball ? Colors.white : Colors.orange,
+                          onTap: () {
+                            toggleHandballVisibility();
+                            ChooseLeagueShowDialog.chooseLeagueDialog(context);
+                            setState(() {
+                              displayedInfo = view1.handball;
+                            });
+                          },
+                        ),
                       ],
                     ),
                     Row(
@@ -150,20 +158,26 @@ class _HeadContainerState extends State<HeadContainer> {
                       children: [
                         ChooseCard(
                           image: 'assets/images/ballValeyball.png',
-                          text1: 'Valeyball',
-                          text2: 'Women',
+                          text1: view1.valeyballWomen,
                           bgColor:
                               !isValeyballWomen ? Colors.white : Colors.orange,
-                          onTap: toggleValeyballWomenVisibility,
+                          onTap: () {
+                            toggleValeyballWomenVisibility();
+                            setState(() {
+                              displayedInfo = view1.valeyballWomen;
+                            });
+                          },
                         ),
                         ChooseCard(
                             image: 'assets/images/ballWomenHandball.png',
-                            text1: 'Handball',
-                            text2: 'Women',
+                            text1: view1.handballWomen,
                             bgColor:
                                 !isHandballWomen ? Colors.white : Colors.orange,
                             onTap: () {
                               toggleHandballWomenVisibility();
+                              setState(() {
+                                displayedInfo = view1.handballWomen;
+                              });
                             }),
                       ],
                     ),
@@ -268,9 +282,9 @@ class _HeadContainerState extends State<HeadContainer> {
                       }),
                 ],
               ),
-              const ChooseSportButton(
+              ChooseSportButton(
                 // image: 'assets/images/whiteValeyballBall.png',
-                text: 'Choose sport',
+                text: displayedInfo,
               ),
             ],
           ),

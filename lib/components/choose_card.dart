@@ -7,13 +7,12 @@ class ChooseCard extends StatelessWidget {
     super.key,
     required this.image,
     required this.text1,
-    this.text2,
     required this.bgColor,
     this.onTap,
   });
   final String image;
   final String text1;
-  final String? text2;
+
   final Color bgColor;
   final void Function()? onTap;
 
@@ -38,10 +37,7 @@ class ChooseCard extends StatelessWidget {
               Text(
                 text1,
                 style: AppTextStyes.textStyle1,
-              ),
-              Text(
-                text2 ?? '',
-                style: AppTextStyes.textStyle1,
+                textAlign: TextAlign.center,
               ),
             ],
           ),
