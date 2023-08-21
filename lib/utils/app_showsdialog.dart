@@ -39,24 +39,27 @@ class AppShowDialogs {
                   ),
                 ),
               ),
-              AlertDialog(
-                backgroundColor: AppColors.tabColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                insetPadding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 20,
-                ),
-                title: InkWell(
-                  onTap: () => Navigator.pop(context),
-                  child: const Text(
-                    "Ok Go back",
-                    textAlign: TextAlign.center,
+              const SizedBox(height: 19),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.tabColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  fixedSize: Size(
+                    MediaQuery.of(context).size.width - 40,
+                    65,
                   ),
                 ),
-                content: Container(
-                  width: MediaQuery.of(context).size.width,
+                onPressed: () => Navigator.pop(context),
+                child: const Text(
+                  'Ok Go back',
+                  style: TextStyle(
+                    color: Color(0xff474747),
+                    fontSize: 21,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],

@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatelessWidget {
+class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  int currentPage = 0;
+  void pages(int index) {
+    setState(() {
+      currentPage = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (_) => Dialog(
-                      backgroundColor: Colors.transparent,
-                      insetPadding: EdgeInsets.all(10),
-                      child: Stack(
-                        // overflow: Overflow.visible,
-                        alignment: Alignment.center,
-                        children: <Widget>[
-                          Container(
-                            width: double.infinity,
-                            height: 200,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.lightBlue),
-                            padding: EdgeInsets.fromLTRB(20, 50, 20, 20),
-                            child: Text("You can make cool stuff!",
-                                style: TextStyle(fontSize: 24),
-                                textAlign: TextAlign.center),
-                          ),
-                          Positioned(top: -100, child: Text('data')),
-                        ],
-                      )));
-            },
-            child: Text('data'),
-          ),
-        ],
-      ),
+      body: <Widget>[
+        Container(
+          color: Colors.red,
+          alignment: Alignment.center,
+          child: const Text('Page 1'),
+        ),
+        Container(
+          color: Colors.green,
+          alignment: Alignment.center,
+          child: const Text('Page 2'),
+        ),
+        Container(
+          color: Colors.blue,
+          alignment: Alignment.center,
+          child: const Text('Page 3'),
+        ),
+      ][currentPageIndex],
     );
   }
 }

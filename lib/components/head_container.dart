@@ -1,13 +1,11 @@
+import 'package:betano/constants/app_sized.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:betano/components/choose_sport_button.dart';
-import 'package:betano/components/upcoming_women_team_lists.dart';
 import 'package:betano/constants/app_text_styles.dart';
 import 'package:betano/utils/choose_league_showdialog.dart';
 import 'package:betano/views/remind_view.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../constants/app_colors.dart';
-
 import '../models/choose_league_model.dart';
 import '../models/upcoming_completed_model.dart';
 import '../views/options_view.dart';
@@ -16,8 +14,8 @@ import 'choose_card.dart';
 
 class HeadContainer extends StatefulWidget {
   const HeadContainer({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<HeadContainer> createState() => _HeadContainerState();
@@ -95,9 +93,8 @@ class _HeadContainerState extends State<HeadContainer> {
 
 //ChooseLeague
   List<ChooseLeague> shooseLeague = shooseLeagueList;
-  FourViewSport fourViewSport = view1;
 
-  String displayedInfo = 'Спорт';
+  String displayedInfo = 'Choose sport';
   void showAboutDialog(BuildContext context) {
     showDialog(
       context: context,
@@ -108,6 +105,9 @@ class _HeadContainerState extends State<HeadContainer> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               AlertDialog(
+                insetPadding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
                 backgroundColor: const Color(0xffe7e7e7),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -123,7 +123,7 @@ class _HeadContainerState extends State<HeadContainer> {
                       ),
                     )),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ChooseCard(
@@ -153,7 +153,7 @@ class _HeadContainerState extends State<HeadContainer> {
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         ChooseCard(
@@ -188,17 +188,15 @@ class _HeadContainerState extends State<HeadContainer> {
                   ],
                 ),
               ),
-              AlertDialog(
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                title: Center(
-                    child: InkWell(
-                  onTap: () => Navigator.pop(context),
-                  child: const Text(
-                    'Cancel',
-                    style: AppTextStyes.cencelTextStyle,
-                  ),
-                )),
+              AppSized.height20,
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text(
+                  'Cansel',
+                  style: AppTextStyes.cencelTextStyle,
+                ),
               ),
             ],
           ),
