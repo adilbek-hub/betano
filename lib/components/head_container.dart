@@ -7,7 +7,7 @@ import 'package:betano/utils/choose_league_showdialog.dart';
 import 'package:betano/views/remind_view.dart';
 import '../constants/app_colors.dart';
 import '../models/choose_league_model.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 import '../views/options_view.dart';
 import 'choice_in_head_container.dart';
 import 'choose_card.dart';
@@ -252,7 +252,8 @@ class _HeadContainerState extends State<HeadContainer> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => RemindView(
-                              upcomingCompletedList: upcomingCompletedList,
+                              upcomingCompletedList:
+                                  upcomingCompletedValeyballList,
                             ),
                           ),
                         );

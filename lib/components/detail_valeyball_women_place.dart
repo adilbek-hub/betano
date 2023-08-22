@@ -1,5 +1,5 @@
 import 'package:betano/constants/app_text_styles.dart';
-import 'package:betano/models/upcoming_completed_model.dart';
+import 'package:betano/models/upcoming_completed_valeyball.dart';
 import 'package:flutter/material.dart';
 
 class DetailsValleyballWomenPlace extends StatelessWidget {
@@ -7,7 +7,7 @@ class DetailsValleyballWomenPlace extends StatelessWidget {
     super.key,
   });
 
-  final List<UpcomingCompleted> detailWomenValeyballPlace =
+  final List<UpcomingCompletedValleyball> detailWomenValeyballPlace =
       detailWomenValeyballPlaceList;
   @override
   Widget build(BuildContext context) {

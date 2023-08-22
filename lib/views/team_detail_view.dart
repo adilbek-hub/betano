@@ -10,7 +10,7 @@ import '../components/in_completed_teams_goals.dart';
 import '../components/to_back.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 class TeamDetailView extends StatelessWidget {
   const TeamDetailView({
@@ -19,9 +19,9 @@ class TeamDetailView extends StatelessWidget {
     required this.set123List,
     required this.detailWomenValeyballPlaceList,
   }) : super(key: key);
-  final UpcomingCompleted upcomingCompletedItem;
-  final List<UpcomingCompleted> set123List;
-  final List<UpcomingCompleted> detailWomenValeyballPlaceList;
+  final UpcomingCompletedValleyball upcomingCompletedItem;
+  final List<UpcomingCompletedValleyball> set123List;
+  final List<UpcomingCompletedValleyball> detailWomenValeyballPlaceList;
 
   @override
   Widget build(BuildContext context) {
@@ -90,16 +90,16 @@ class TeamDetailView extends StatelessWidget {
                   children: [
                     const ToBack(),
                     InCompletedTeamsGoals(
-                        upcomingCompletedItem: upcomingCompletedItem),
+                        upcomingCompletedValeyballList: upcomingCompletedItem),
                     AppSized.height20,
                     DetailsValleyballWomenPlace(),
                   ],
                 ),
               ),
-              for (UpcomingCompleted sets in set123List)
+              for (UpcomingCompletedValleyball sets in set123List)
                 AllSets(set123List: [sets]),
               Broadcast(
-                broadcastList: broadcastList,
+                broadcastList: broadcastValeyballList,
               ),
             ],
           ),

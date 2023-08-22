@@ -1,6 +1,6 @@
 import 'package:betano/views/duels_detail_view.dart';
 import 'package:flutter/material.dart';
-import 'package:betano/models/upcoming_completed_model.dart';
+import 'package:betano/models/upcoming_completed_valeyball.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
@@ -10,14 +10,14 @@ class UpcomingWomenTeamLists extends StatefulWidget {
     Key? key,
     required this.upcomingCompletedList,
   }) : super(key: key);
-  final List<UpcomingCompleted> upcomingCompletedList;
+  final List<UpcomingCompletedValleyball> upcomingCompletedList;
 
   @override
   State<UpcomingWomenTeamLists> createState() => _UpcomingWomenTeamListsState();
 }
 
 class _UpcomingWomenTeamListsState extends State<UpcomingWomenTeamLists> {
-  List<UpcomingCompleted> currentList = [];
+  List<UpcomingCompletedValleyball> currentList = [];
 
   @override
   void initState() {

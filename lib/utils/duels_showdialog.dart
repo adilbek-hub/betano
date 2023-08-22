@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 import '../views/duels_detail_view.dart';
 
 class DuelsShowDialog {
   static Future<void> showMyDialog(
-      context, UpcomingCompleted upcomingCompleted) async {
+      context, UpcomingCompletedValleyball upcomingCompleted) async {
     return showDialog(
         context: context,
         builder: (context) {

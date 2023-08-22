@@ -4,14 +4,14 @@ import '../components/head_container.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 class TeamDetailView2 extends StatelessWidget {
   const TeamDetailView2({
     Key? key,
     required this.upcomingCompletedItem,
   }) : super(key: key);
-  final UpcomingCompleted upcomingCompletedItem;
+  final UpcomingCompletedValleyball upcomingCompletedItem;
 
   @override
   Widget build(BuildContext context) {

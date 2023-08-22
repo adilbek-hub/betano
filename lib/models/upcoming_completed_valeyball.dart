@@ -1,5 +1,5 @@
-class UpcomingCompleted {
-  const UpcomingCompleted({
+class UpcomingCompletedValleyball {
+  const UpcomingCompletedValleyball({
     this.image1,
     this.image2,
     this.text1,
@@ -72,7 +72,7 @@ class DuelsNumbers {
   final String? league2Women8;
 }
 
-const league1 = UpcomingCompleted(
+const league1 = UpcomingCompletedValleyball(
   image1: 'PlYellow2',
   image2: 'PLBlack2',
   text1: 'League 2 Women 1',
@@ -92,7 +92,7 @@ const league1 = UpcomingCompleted(
   goalsNum9: '16:11',
   goalsNum10: '20:26',
 );
-const league2 = UpcomingCompleted(
+const league2 = UpcomingCompletedValleyball(
   image1: 'PlYellow2',
   image2: 'PLBlack2',
   text1: 'League 2 Women 2',
@@ -112,7 +112,7 @@ const league2 = UpcomingCompleted(
   goalsNum9: '23:23',
   goalsNum10: '24:24',
 );
-const league3 = UpcomingCompleted(
+const league3 = UpcomingCompletedValleyball(
   image1: 'PlYellow2',
   image2: 'PLBlack2',
   text1: 'Toro Dre Maja. Women',
@@ -132,7 +132,7 @@ const league3 = UpcomingCompleted(
   goalsNum9: '12:12',
   goalsNum10: '13:13',
 );
-const league4 = UpcomingCompleted(
+const league4 = UpcomingCompletedValleyball(
   image1: 'PlYellow2',
   image2: 'PLBlack2',
   text1: 'League 2 Women 4',
@@ -153,7 +153,7 @@ const league4 = UpcomingCompleted(
   goalsNum10: '17:16',
 );
 
-const league5 = UpcomingCompleted(
+const league5 = UpcomingCompletedValleyball(
   image1: 'PlYellow2',
   image2: 'PLBlack2',
   text1: 'Toro Dre Maja. Women 6',
@@ -173,7 +173,7 @@ const league5 = UpcomingCompleted(
   goalsNum9: '16:20',
   goalsNum10: '10:26',
 );
-const league6 = UpcomingCompleted(
+const league6 = UpcomingCompletedValleyball(
   image1: 'PlYellow2',
   image2: 'PLBlack2',
   text1: 'League 2 Women 8',
@@ -193,7 +193,7 @@ const league6 = UpcomingCompleted(
   goalsNum9: '16:13',
   goalsNum10: '16:26',
 );
-List<UpcomingCompleted> upcomingCompletedList = [
+List<UpcomingCompletedValleyball> upcomingCompletedValeyballList = [
   league1,
   league2,
   league3,
@@ -202,36 +202,36 @@ List<UpcomingCompleted> upcomingCompletedList = [
   league6,
 ];
 
-const stadium = UpcomingCompleted(
+const stadium = UpcomingCompletedValleyball(
   text3: 'Stadium',
   text4: 'Al Banat Haimi Pos da Reteo',
 );
-const city = UpcomingCompleted(
+const city = UpcomingCompletedValleyball(
   text3: 'City',
   text4: 'Malanda',
 );
-const capacity = UpcomingCompleted(
+const capacity = UpcomingCompletedValleyball(
   text3: 'Capacity',
   text4: '120 000',
 );
-const country = UpcomingCompleted(
+const country = UpcomingCompletedValleyball(
   text3: 'Country',
   text4: 'Korooco',
 );
-const homePosition = UpcomingCompleted(
+const homePosition = UpcomingCompletedValleyball(
   text3: 'Home position',
   text4: '4',
 );
-const awayPosition = UpcomingCompleted(
+const awayPosition = UpcomingCompletedValleyball(
   text3: 'Away position',
   text4: '4',
 );
-const bestsOfSets = UpcomingCompleted(
+const bestsOfSets = UpcomingCompletedValleyball(
   text3: 'Bests of sets',
   text4: '5',
 );
 
-List<UpcomingCompleted> detailWomenValeyballPlaceList = [
+List<UpcomingCompletedValleyball> detailWomenValeyballPlaceList = [
   stadium,
   city,
   capacity,
@@ -241,53 +241,53 @@ List<UpcomingCompleted> detailWomenValeyballPlaceList = [
   bestsOfSets,
 ];
 
-const set1 = UpcomingCompleted(num1: 14, text1: '1 Set', num2: 4);
-const set2 = UpcomingCompleted(num1: 14, text1: '2 Set', num2: 6);
-const set3 = UpcomingCompleted(num1: 17, text1: '3 Set', num2: 12);
-const pointsWonOnServe =
-    UpcomingCompleted(num1: 14, text1: 'Points won on serve', num2: 22);
+const set1 = UpcomingCompletedValleyball(num1: 14, text1: '1 Set', num2: 4);
+const set2 = UpcomingCompletedValleyball(num1: 14, text1: '2 Set', num2: 6);
+const set3 = UpcomingCompletedValleyball(num1: 17, text1: '3 Set', num2: 12);
+const pointsWonOnServe = UpcomingCompletedValleyball(
+    num1: 14, text1: 'Points won on serve', num2: 22);
 const longestStreak =
-    UpcomingCompleted(num1: 14, text1: 'Longest streak', num2: 22);
+    UpcomingCompletedValleyball(num1: 14, text1: 'Longest streak', num2: 22);
 
-List<UpcomingCompleted> set123List = [
+List<UpcomingCompletedValleyball> set123ValeyballList = [
   set1,
   set2,
   set3,
   pointsWonOnServe,
   longestStreak,
 ];
-const broadcast1 = UpcomingCompleted(text1: 'Match text broadcast');
+const broadcast1 = UpcomingCompletedValleyball(text1: 'Match text broadcast');
 
-const broadcast2 = UpcomingCompleted(
+const broadcast2 = UpcomingCompletedValleyball(
   text2: '12’',
   text3:
       '- et dolore sed laoreet eros wisi feugait facilisi. ut veniam, luptatum',
 );
 
-const broadcast3 = UpcomingCompleted(
+const broadcast3 = UpcomingCompletedValleyball(
   text2: '16’',
   text3: 'augue exerci te illum esse facilisis consequat, Duis in odio nonummy',
 );
 
-const broadcast4 = UpcomingCompleted(
+const broadcast4 = UpcomingCompletedValleyball(
   text2: '22’',
   text3:
       'volutpat. eum diam odio aliquam wisi Duis ullamcorper hendrerit ipsum consequat.',
 );
 
-const broadcast5 = UpcomingCompleted(
+const broadcast5 = UpcomingCompletedValleyball(
   text2: '27’',
   text3:
       'consequat, nulla commodo feugiat dignissim delenit amet, Ut magna erat zzril',
 );
 
-const broadcast6 = UpcomingCompleted(
+const broadcast6 = UpcomingCompletedValleyball(
   text2: '31’',
   text3:
       '- et dolore sed laoreet eros wisi feugait facilisi. ut veniam, luptatum',
 );
 
-List<UpcomingCompleted> broadcastList = [
+List<UpcomingCompletedValleyball> broadcastValeyballList = [
   broadcast1,
   broadcast2,
   broadcast3,
@@ -296,19 +296,28 @@ List<UpcomingCompleted> broadcastList = [
   broadcast6,
 ];
 
-const teamGoal1 = UpcomingCompleted(text1: 'Malaca Team', text2: '44:71');
-const teamGoals2 = UpcomingCompleted(text1: 'Ipsum Team', text2: '44:71');
-const teamGoals3 = UpcomingCompleted(text1: 'Molestie Commodo', text2: '22:22');
-const teamGoals4 = UpcomingCompleted(text1: 'In Elit Team', text2: '44:71');
+const teamGoal1 =
+    UpcomingCompletedValleyball(text1: 'Malaca Team', text2: '44:71');
+const teamGoals2 =
+    UpcomingCompletedValleyball(text1: 'Ipsum Team', text2: '44:71');
+const teamGoals3 =
+    UpcomingCompletedValleyball(text1: 'Molestie Commodo', text2: '22:22');
+const teamGoals4 =
+    UpcomingCompletedValleyball(text1: 'In Elit Team', text2: '44:71');
 const teamGoals5 =
-    UpcomingCompleted(text1: 'Veniam Dolor Club', text2: '44:71');
-const teamGoals6 = UpcomingCompleted(text1: 'Team Adipiscing', text2: '44:71');
-const teamGoals7 = UpcomingCompleted(text1: 'Team Amet', text2: '22:22');
-const teamGoals8 = UpcomingCompleted(text1: 'Volutpat Team', text2: '44:71');
-const teamGoals9 = UpcomingCompleted(text1: 'Wisi Team', text2: '44:71');
-const teamGoals10 = UpcomingCompleted(text1: 'Te Fa Team', text2: '44:71');
+    UpcomingCompletedValleyball(text1: 'Veniam Dolor Club', text2: '44:71');
+const teamGoals6 =
+    UpcomingCompletedValleyball(text1: 'Team Adipiscing', text2: '44:71');
+const teamGoals7 =
+    UpcomingCompletedValleyball(text1: 'Team Amet', text2: '22:22');
+const teamGoals8 =
+    UpcomingCompletedValleyball(text1: 'Volutpat Team', text2: '44:71');
+const teamGoals9 =
+    UpcomingCompletedValleyball(text1: 'Wisi Team', text2: '44:71');
+const teamGoals10 =
+    UpcomingCompletedValleyball(text1: 'Te Fa Team', text2: '44:71');
 
-List<UpcomingCompleted> teamGoalList = [
+List<UpcomingCompletedValleyball> teamGoalList = [
   teamGoal1,
   teamGoals2,
   teamGoals3,

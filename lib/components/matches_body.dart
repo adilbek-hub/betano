@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:betano/components/upcoming_completed_button.dart';
 import 'package:betano/constants/app_colors.dart';
 import '../constants/app_sized.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 class MatchesBody extends StatefulWidget {
   const MatchesBody({super.key});
@@ -107,11 +107,11 @@ class _MatchesBodyState extends State<MatchesBody> {
           ),
           if (showUpcomingCompleted)
             UpcomingWomenTeamLists(
-              upcomingCompletedList: upcomingCompletedList,
+              upcomingCompletedList: upcomingCompletedValeyballList,
             ),
           if (!showUpcomingCompleted)
             CompletedWomenTeamLists(
-              upcomingCompletedList: upcomingCompletedList,
+              upcomingCompletedList: upcomingCompletedValeyballList,
             ),
         ],
       ),

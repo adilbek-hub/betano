@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../constants/app_colors.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 class Broadcast extends StatelessWidget {
   const Broadcast({
     Key? key,
     required this.broadcastList,
   }) : super(key: key);
-  final List<UpcomingCompleted> broadcastList;
+  final List<UpcomingCompletedValleyball> broadcastList;
 
   @override
   Widget build(BuildContext context) {

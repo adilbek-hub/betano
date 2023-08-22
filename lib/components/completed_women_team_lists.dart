@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 import '../views/team_detail_view.dart';
 
 class CompletedWomenTeamLists extends StatefulWidget {
@@ -13,7 +13,7 @@ class CompletedWomenTeamLists extends StatefulWidget {
     required this.upcomingCompletedList,
   }) : super(key: key);
   final void Function()? onTap;
-  final List<UpcomingCompleted> upcomingCompletedList;
+  final List<UpcomingCompletedValleyball> upcomingCompletedList;
 
   @override
   State<CompletedWomenTeamLists> createState() =>
@@ -35,7 +35,7 @@ class _CompletedWomenTeamListsState extends State<CompletedWomenTeamLists> {
                 MaterialPageRoute(
                   builder: (context) => TeamDetailView(
                     upcomingCompletedItem: upcomingCompleted,
-                    set123List: set123List,
+                    set123List: set123ValeyballList,
                     detailWomenValeyballPlaceList:
                         detailWomenValeyballPlaceList,
                   ),

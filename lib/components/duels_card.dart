@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 import '../utils/duels_showdialog.dart';
 
 class DuelsCard extends StatelessWidget {
@@ -11,7 +11,7 @@ class DuelsCard extends StatelessWidget {
     required this.upcomingCompleted,
   });
 
-  final UpcomingCompleted upcomingCompleted;
+  final UpcomingCompletedValleyball upcomingCompleted;
 
   @override
   Widget build(BuildContext context) {

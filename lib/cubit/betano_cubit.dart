@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 part 'betano_state.dart';
 
@@ -10,7 +10,7 @@ part 'betano_state.dart';
 //   ContainerEvent(this.indexToRemove);
 // }
 
-class BetanoCubit extends Cubit<List<UpcomingCompleted>> {
+class BetanoCubit extends Cubit<List<UpcomingCompletedValleyball>> {
   BetanoCubit() : super([]);
 
   void removeItem(int index) {

@@ -4,14 +4,14 @@ import '../components/duels_card.dart';
 import '../components/to_back.dart';
 import '../components/vertical_divider.dart';
 import '../constants/app_sized.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 class DuelsDetailView extends StatelessWidget {
   const DuelsDetailView({
     Key? key,
     required this.upcomingCompleted,
   }) : super(key: key);
-  final UpcomingCompleted upcomingCompleted;
+  final UpcomingCompletedValleyball upcomingCompleted;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class TeamsTileGoals extends StatelessWidget {
     Key? key,
     required this.teamGoalList,
   }) : super(key: key);
-  final List<UpcomingCompleted> teamGoalList;
+  final List<UpcomingCompletedValleyball> teamGoalList;
 
   @override
   Widget build(BuildContext context) {

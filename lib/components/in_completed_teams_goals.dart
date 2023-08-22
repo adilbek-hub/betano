@@ -1,17 +1,16 @@
+import 'package:betano/models/upcoming_completed_valeyball.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
-import '../models/upcoming_completed_model.dart';
 
 class InCompletedTeamsGoals extends StatelessWidget {
   const InCompletedTeamsGoals({
     super.key,
-    required this.upcomingCompletedItem,
+    required this.upcomingCompletedValeyballList,
   });
 
-  final UpcomingCompleted upcomingCompletedItem;
+  final UpcomingCompletedValleyball upcomingCompletedValeyballList;
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +40,10 @@ class InCompletedTeamsGoals extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset(
-                        'assets/images/${upcomingCompletedItem.image1}.png'),
+                        'assets/images/${upcomingCompletedValeyballList.image1}.png'),
                     AppSized.height5,
                     Text(
-                      '${upcomingCompletedItem.text1}',
+                      '${upcomingCompletedValeyballList.text1}',
                       style: AppTextStyes.textTextStyle,
                     )
                   ],
@@ -52,7 +51,7 @@ class InCompletedTeamsGoals extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      '${upcomingCompletedItem.goals}',
+                      '${upcomingCompletedValeyballList.goals}',
                       style: AppTextStyes.goalsTextStyle,
                     ),
                   ],
@@ -61,10 +60,10 @@ class InCompletedTeamsGoals extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset(
-                        'assets/images/${upcomingCompletedItem.image2}.png'),
+                        'assets/images/${upcomingCompletedValeyballList.image2}.png'),
                     AppSized.height5,
                     Text(
-                      '${upcomingCompletedItem.text2}',
+                      '${upcomingCompletedValeyballList.text2}',
                       style: AppTextStyes.textTextStyle,
                     ),
                   ],

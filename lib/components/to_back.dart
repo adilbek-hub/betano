@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 import '../views/menu_view.dart';
 
 class ToBack extends StatelessWidget {
@@ -19,7 +19,7 @@ class ToBack extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) {
                   return MenuView(
-                    upcomingCompletedList: upcomingCompletedList,
+                    upcomingCompletedList: upcomingCompletedValeyballList,
                   );
                 },
               ),

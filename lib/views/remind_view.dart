@@ -4,7 +4,7 @@ import '../components/head_container.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../constants/app_text_styles.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 import '../utils/clear_all_show_dialog.dart';
 import 'duels_detail_view.dart';
 
@@ -13,7 +13,7 @@ class RemindView extends StatefulWidget {
     Key? key,
     required this.upcomingCompletedList,
   }) : super(key: key);
-  final List<UpcomingCompleted> upcomingCompletedList;
+  final List<UpcomingCompletedValleyball> upcomingCompletedList;
 
   @override
   State<RemindView> createState() => _RemindViewState();
@@ -23,7 +23,7 @@ class _RemindViewState extends State<RemindView> {
   bool allCleared = false;
   void cleanAll() {
     setState(() {
-      upcomingCompletedList.clear();
+      upcomingCompletedValeyballList.clear();
       allCleared = true;
     });
   }
@@ -71,9 +71,10 @@ class _RemindViewState extends State<RemindView> {
             Expanded(
               flex: 4,
               child: ListView.builder(
-                  itemCount: upcomingCompletedList.length,
+                  itemCount: upcomingCompletedValeyballList.length,
                   itemBuilder: (context, index) {
-                    final upcomingCompleted = upcomingCompletedList[index];
+                    final upcomingCompleted =
+                        upcomingCompletedValeyballList[index];
                     return InkWell(
                       onTap: () {
                         Navigator.push(

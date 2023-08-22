@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/app_colors.dart';
-import '../models/upcoming_completed_model.dart';
+import '../models/upcoming_completed_valeyball.dart';
 
 class AllSets extends StatelessWidget {
   const AllSets({
@@ -9,7 +9,7 @@ class AllSets extends StatelessWidget {
     required this.set123List,
   });
 
-  final List<UpcomingCompleted> set123List;
+  final List<UpcomingCompletedValleyball> set123List;
 
   @override
   Widget build(BuildContext context) {
