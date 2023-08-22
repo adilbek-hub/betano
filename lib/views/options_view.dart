@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:betano/constants/app_colors.dart';
 import 'package:betano/constants/app_sized.dart';
-import 'package:betano/constants/app_texts.dart';
-
-import '../components/choose_card.dart';
-import '../components/custom_button.dart';
 import '../components/head_container.dart';
-import '../components/table_rows.dart';
 import '../constants/app_text_styles.dart';
 import '../models/choose_league_model.dart';
 import '../utils/choose_league_showdialog.dart';

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../models/upcoming_completed_model.dart';
+import '../views/menu_view.dart';
+
 class ToBack extends StatelessWidget {
   const ToBack({
     super.key,
@@ -11,7 +14,16 @@ class ToBack extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return MenuView(
+                    upcomingCompletedList: upcomingCompletedList,
+                  );
+                },
+              ),
+            );
           },
           icon: const Icon(
             Icons.arrow_back_ios,

@@ -1,6 +1,5 @@
 import 'package:betano/components/completed_women_team_lists.dart';
 import 'package:betano/components/upcoming_women_team_lists.dart';
-import 'package:betano/views/team_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:betano/components/upcoming_completed_button.dart';
 import 'package:betano/constants/app_colors.dart';

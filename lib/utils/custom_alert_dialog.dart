@@ -1,3 +1,4 @@
+import 'package:betano/constants/app_sized.dart';
 import 'package:flutter/material.dart';
 
 class CustomAlertDialog extends StatelessWidget {
@@ -5,7 +6,8 @@ class CustomAlertDialog extends StatelessWidget {
   final VoidCallback onYes;
   final VoidCallback onNo;
 
-  CustomAlertDialog({
+  const CustomAlertDialog({
+    super.key,
     required this.message,
     required this.onYes,
     required this.onNo,
@@ -18,17 +20,17 @@ class CustomAlertDialog extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(message),
-          SizedBox(height: 20),
+          AppSized.height20,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
                 onPressed: onYes,
-                child: Text('Yes'),
+                child: const Text('Yes'),
               ),
               ElevatedButton(
                 onPressed: onNo,
-                child: Text('No'),
+                child: const Text('No'),
               ),
             ],
           ),

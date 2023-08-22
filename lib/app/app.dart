@@ -1,12 +1,9 @@
 import 'package:betano/views/menu_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../components/upcoming_women_team_lists.dart';
 import '../cubit/betano_cubit.dart';
-import '../example.dart';
 import '../models/upcoming_completed_model.dart';
-
 import '../views/table_matches_view.dart';
 
 class MyApp extends StatelessWidget {

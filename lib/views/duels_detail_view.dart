@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../components/choice_in_head_container.dart';
-import '../components/choose_sport_button.dart';
 import '../components/detail_valeyball_women_place.dart';
 import '../components/duels_card.dart';
 import '../components/to_back.dart';
 import '../components/vertical_divider.dart';
-import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
-import '../constants/app_text_styles.dart';
 import '../models/upcoming_completed_model.dart';
-import '../utils/duels_showdialog.dart';
 
 class DuelsDetailView extends StatelessWidget {
   const DuelsDetailView({
@@ -268,7 +261,7 @@ class TeamsTileGoals extends StatelessWidget {
                   ),
                   TeamGoalCard(
                     bgColor: Colors.transparent,
-                    borderColor: Color(0xff4CC314),
+                    borderColor: const Color(0xff4CC314),
                     widget: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:betano/constants/app_sized.dart';
-import 'package:betano/models/choose_league_model.dart';
 
 class ChooseSportButton extends StatefulWidget {
   const ChooseSportButton({

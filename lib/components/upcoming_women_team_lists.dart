@@ -77,7 +77,6 @@ class _UpcomingWomenTeamListsState extends State<UpcomingWomenTeamLists> {
                           InkWell(
                             onTap: () {
                               removeItem(index);
-                              print('object');
                             },
                             child: Image.asset(
                                 'assets/images/${upcomingCompleted.alarm}.png'),

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../models/upcoming_completed_model.dart';
-
 class ClearAllButton extends StatefulWidget {
   const ClearAllButton({
     Key? key,
@@ -33,7 +31,7 @@ class _ClearAllButtonState extends State<ClearAllButton> {
                 },
               ),
               TextButton(
-                child: Text('Yes'),
+                child: const Text('Yes'),
                 onPressed: () {},
               ),
             ],
