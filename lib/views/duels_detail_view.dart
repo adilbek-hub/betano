@@ -24,55 +24,6 @@ class DuelsDetailView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 120,
-          automaticallyImplyLeading: false,
-          backgroundColor: AppColors.black1,
-          title: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  ChoiceInHeadContainer(
-                    bgColor: Colors.orange,
-                    borderColor: Colors.orange,
-                    text: 'Category',
-                    style: GoogleFonts.roboto(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  ChoiceInHeadContainer(
-                    bgColor: Colors.orange,
-                    borderColor: Colors.orange,
-                    text: 'Remind',
-                    style: GoogleFonts.roboto(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  ChoiceInHeadContainer(
-                    bgColor: Colors.orange,
-                    borderColor: Colors.orange,
-                    text: 'Options',
-                    style: GoogleFonts.roboto(
-                      color: Colors.black,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              const ChooseSportButton(
-                image: 'assets/images/whiteValeyballBall.png',
-                text: 'Valleyball',
-              ),
-            ],
-          ),
-        ),
         body: SingleChildScrollView(
           child: Column(
             children: [

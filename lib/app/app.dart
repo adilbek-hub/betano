@@ -24,7 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const MenuView(),
+          '/': (context) => MenuView(
+                upcomingCompletedList: upcomingCompletedList,
+              ),
           '/TableView': (context) => const TableView(),
           // '/DuelsDetailView': (context) =>  DuelsDetailView(upcomingCompletedItem: upcomingCompleted,),
           '/UpcomingWomenTeamLists': (context) => UpcomingWomenTeamLists(
