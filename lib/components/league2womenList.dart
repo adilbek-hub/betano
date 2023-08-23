@@ -1,8 +1,6 @@
-import 'package:betano/constants/app_sized.dart';
 import 'package:flutter/material.dart';
-
 import 'package:betano/constants/app_text_styles.dart';
-
+import '../constants/app_sized.dart';
 import '../models/choose_league_model.dart';
 import '../models/league_women.dart';
 import 'add_remove_button.dart';
@@ -88,7 +86,7 @@ class _CustomWidgetState extends State<CustomWidget> {
               itemBuilder: (context, index) {
                 final leagueWomen = leagueWomenList[index];
                 return Container(
-                  height: 60,
+                  height: 50,
                   decoration: const BoxDecoration(
                     border: Border(
                       bottom: BorderSide(

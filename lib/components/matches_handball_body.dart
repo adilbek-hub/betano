@@ -6,14 +6,14 @@ import 'package:betano/constants/app_colors.dart';
 import '../constants/app_sized.dart';
 import '../models/upcoming_completed_valeyball.dart';
 
-class MatchesBody extends StatefulWidget {
-  const MatchesBody({super.key});
+class MatchesHandballBody extends StatefulWidget {
+  const MatchesHandballBody({super.key});
 
   @override
-  State<MatchesBody> createState() => _MatchesBodyState();
+  State<MatchesHandballBody> createState() => _MatchesHandballBodyState();
 }
 
-class _MatchesBodyState extends State<MatchesBody> {
+class _MatchesHandballBodyState extends State<MatchesHandballBody> {
   Color button1Color = AppColors.upcomingCompleted;
   Color button2Color = AppColors.upcomingCompleted;
   Color buttonTextColor = AppColors.white;

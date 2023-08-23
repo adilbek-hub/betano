@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:betano/components/table_matches_valeyball_button.dart';
 import '../components/head_container.dart';
+import '../components/table_matches_handball_button.dart';
 import '../constants/app_colors.dart';
 import '../models/upcoming_completed_valeyball.dart';
 
-class TableView extends StatefulWidget {
-  const TableView({
+class TableMatchesHandballWomenView extends StatefulWidget {
+  const TableMatchesHandballWomenView({
     Key? key,
-    required this.upcomingCompletedList,
+    required this.upcomingCompletedValeyballList,
   }) : super(key: key);
-  final List<UpcomingCompletedValleyball> upcomingCompletedList;
+  final List<UpcomingCompletedValleyball> upcomingCompletedValeyballList;
 
   @override
-  State<TableView> createState() => _TableViewState();
+  State<TableMatchesHandballWomenView> createState() =>
+      _TableMatchesHandballWomenViewState();
 }
 
-class _TableViewState extends State<TableView> {
+class _TableMatchesHandballWomenViewState
+    extends State<TableMatchesHandballWomenView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,7 +32,7 @@ class _TableViewState extends State<TableView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     HeadContainer(),
-                    TableMatchesValeyballButton(),
+                    TableMatchesHandballButton(),
                   ],
                 ),
               ),

@@ -211,20 +211,21 @@ List<UpcomingCompletedHandball> upcomingCompletedHandballList = [
   awayPosition,
 ];
 
-const set1 = UpcomingCompletedHandball(num1: 14, text1: '1 Set', num2: 4);
-const set2 = UpcomingCompletedHandball(num1: 14, text1: '2 Set', num2: 6);
-const set3 = UpcomingCompletedHandball(num1: 17, text1: '3 Set', num2: 12);
-const pointsWonOnServe =
-    UpcomingCompletedHandball(num1: 14, text1: 'Points won on serve', num2: 22);
-const longestStreak =
-    UpcomingCompletedHandball(num1: 14, text1: 'Longest streak', num2: 22);
+const period1 = UpcomingCompletedHandball(
+    num1: 14, text1: 'Last 10 minutes score', num2: 22);
+const period2 = UpcomingCompletedHandball(num1: 14, text1: '1 Period', num2: 4);
+const period3 = UpcomingCompletedHandball(num1: 14, text1: '2 Period', num2: 6);
+const period4 =
+    UpcomingCompletedHandball(num1: 17, text1: '3 Period', num2: 12);
+const period5 =
+    UpcomingCompletedHandball(num1: 25, text1: '4 Period', num2: 25);
 
-List<UpcomingCompletedHandball> set123List = [
-  set1,
-  set2,
-  set3,
-  pointsWonOnServe,
-  longestStreak,
+List<UpcomingCompletedHandball> set123HandballList = [
+  period1,
+  period2,
+  period3,
+  period4,
+  period5,
 ];
 const broadcast1 = UpcomingCompletedHandball(text1: 'Match text broadcast');
 

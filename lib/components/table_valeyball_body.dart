@@ -6,29 +6,29 @@ import '../models/choose_league_model.dart';
 import '../models/league_women.dart';
 import 'league2womenList.dart';
 
-class TableBody extends StatefulWidget {
-  const TableBody({
+class TableValeyballBody extends StatefulWidget {
+  const TableValeyballBody({
     super.key,
   });
 
   @override
-  State<TableBody> createState() => _TableBodyState();
+  State<TableValeyballBody> createState() => _TableValeyballBodyState();
 }
 
-class _TableBodyState extends State<TableBody> {
+class _TableValeyballBodyState extends State<TableValeyballBody> {
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Column(
         children: [
-          AppSized.height25,
+          AppSized.height15,
           Image.asset('assets/images/bigPLBack.png'),
-          AppSized.height25,
+          AppSized.height5,
           const Text(
             'League 2. Women',
             style: AppTextStyes.leaque2Style,
           ),
-          AppSized.height5,
+          // AppSized.height5,
           Align(
             alignment: Alignment.centerRight,
             child: Padding(
@@ -44,7 +44,7 @@ class _TableBodyState extends State<TableBody> {
             indent: 10,
             thickness: 1,
           ),
-          AppSized.height10,
+          AppSized.height5,
           CustomWidget(
             shooseLeague: shooseLeagueList,
             aList: leagueWomenList,

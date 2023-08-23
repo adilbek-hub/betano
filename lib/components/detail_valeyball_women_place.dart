@@ -1,5 +1,5 @@
 import 'package:betano/constants/app_text_styles.dart';
-import 'package:betano/models/upcoming_completed_valeyball.dart';
+import 'package:betano/models/upcoming_completed_handball.dart';
 import 'package:flutter/material.dart';
 
 class DetailsValleyballWomenPlace extends StatelessWidget {
@@ -7,8 +7,8 @@ class DetailsValleyballWomenPlace extends StatelessWidget {
     super.key,
   });
 
-  final List<UpcomingCompletedValleyball> detailWomenValeyballPlace =
-      detailWomenValeyballPlaceList;
+  final List<UpcomingCompletedHandball> upcomingCompletedHandballLists =
+      upcomingCompletedHandballList;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -21,10 +21,10 @@ class DetailsValleyballWomenPlace extends StatelessWidget {
             childAspectRatio: MediaQuery.of(context).size.width /
                 (MediaQuery.of(context).size.height / 4),
           ),
-          itemCount: detailWomenValeyballPlace.length,
+          itemCount: upcomingCompletedHandballLists.length,
           itemBuilder: (BuildContext context, int index) {
             final detailWomenValeyballPlaceList =
-                detailWomenValeyballPlace[index];
+                upcomingCompletedHandballLists[index];
             return Container(
                 margin: const EdgeInsets.only(
                   left: 10,

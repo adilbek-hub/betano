@@ -1,5 +1,7 @@
 import 'package:betano/models/upcoming_completed_valeyball.dart';
+import 'package:betano/views/web_view.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import '../components/choose_sport_button.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sized.dart';
@@ -22,6 +24,24 @@ class MenuView extends StatefulWidget {
 }
 
 class _MenuViewState extends State<MenuView> {
+  final controller = WebViewController()
+    ..setJavaScriptMode(JavaScriptMode.unrestricted)
+    ..setBackgroundColor(const Color(0x00000000))
+    ..setNavigationDelegate(
+      NavigationDelegate(
+        onProgress: (int progress) {},
+        onPageStarted: (String url) {},
+        onPageFinished: (String url) {},
+        onWebResourceError: (WebResourceError error) {},
+        onNavigationRequest: (NavigationRequest request) {
+          if (request.url.startsWith('https://www.youtube.com/')) {
+            return NavigationDecision.prevent;
+          }
+          return NavigationDecision.navigate;
+        },
+      ),
+    )
+    ..loadRequest(Uri.parse('https://flutter.dev'));
   int currentIndex = 0;
   //CHOOSE SPORT
   bool isValeyball = false;
@@ -140,10 +160,8 @@ class _MenuViewState extends State<MenuView> {
         ),
       );
 
-  buildAllCategory() => Expanded(
-        flex: 4,
-        child: ElevatedButton(onPressed: () {}, child: Text('data')),
-      );
+  buildAllCategory() => Expanded(flex: 4, child: Container());
+
 //buildAllRemind logika
   bool allCleared = false;
   void cleanAll() {
@@ -608,10 +626,28 @@ class _MenuViewState extends State<MenuView> {
                     ],
                   ),
                   AppSized.height15,
-                  ChooseSportButton(
-                    // image: 'assets/images/whiteValeyballBall.png',
-                    text: displayedInfo,
-                  ),
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const WebViewPage(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Watch in Web',
+                          style: TextStyle(color: Colors.red),
+                        ),
+                      ),
+                      ChooseSportButton(
+                        // image: 'assets/images/whiteValeyballBall.png',
+                        text: displayedInfo,
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),

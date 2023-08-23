@@ -1,8 +1,7 @@
 import 'package:betano/models/upcoming_completed_handball.dart';
 import 'package:betano/models/upcoming_completed_valeyball.dart';
 import 'package:flutter/material.dart';
-
-import 'components/all_sets.dart';
+import 'components/all_sets_handball.dart';
 import 'components/broadcast.dart';
 import 'components/detail_valeyball_women_place.dart';
 import 'components/in_completed_teams_goals.dart';
@@ -17,8 +16,8 @@ class MyWidget extends StatelessWidget {
     // required this.detailWomenValeyballPlaceList,
   }) : super(key: key);
   final List<UpcomingCompletedHandball> upcomingCompletedHandballList;
-  // final List<UpcomingCompleted> set123List;
-  // final List<UpcomingCompleted> detailWomenValeyballPlaceList;
+  // final List<UpcomingCompletedValleyball> set123List;
+  // final List<UpcomingCompletedValleyball> detailWomenValeyballPlaceList;
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +45,10 @@ class MyWidget extends StatelessWidget {
                 ),
               ),
               Image.asset('assets/images/area.png'),
-              for (UpcomingCompletedValleyball sets in set123ValeyballList)
-                AllSets(set123List: [sets]),
+              for (UpcomingCompletedHandball sets in set123HandballList)
+                AllHandballSets(
+                  set123HandballList: [sets],
+                ),
               Broadcast(
                 broadcastList: broadcastValeyballList,
               ),
