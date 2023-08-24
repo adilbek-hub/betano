@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "56255044182",
+    "project_id": "betano-4d6b5",
+    "storage_bucket": "betano-4d6b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56255044182:android:aeba07cfadb36107a579f7",
+        "android_client_info": {
+          "package_name": "com.example.betano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56255044182-ftkt05qb2c6u03v458cfag5og3e8o2g9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkKToFy_OziZeO41jdCRGhnTUq3y93OFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56255044182-ftkt05qb2c6u03v458cfag5og3e8o2g9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

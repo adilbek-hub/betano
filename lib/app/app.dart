@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../components/upcoming_women_team_lists.dart';
 
 import '../models/upcoming_completed_valeyball.dart';
+import '../views/link.dart';
 import '../views/table_matches_view.dart';
 
 class MyApp extends StatelessWidget {
@@ -22,9 +23,10 @@ class MyApp extends StatelessWidget {
         '/':
             (context) => /*MyWidget(
             upcomingCompletedHandballList: upcomingCompletedHandballList),*/
-                MenuView(
+                const Link(),
+        /* MenuView(
                   upcomingCompletedList: upcomingCompletedValeyballList,
-                ),
+                ),*/
         '/TableView': (context) => TableView(
               upcomingCompletedList: upcomingCompletedValeyballList,
             ),

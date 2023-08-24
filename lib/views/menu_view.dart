@@ -1,5 +1,8 @@
+import 'package:betano/models/link_model.dart';
 import 'package:betano/models/upcoming_completed_valeyball.dart';
 import 'package:betano/views/web_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../components/choose_sport_button.dart';
@@ -24,6 +27,17 @@ class MenuView extends StatefulWidget {
 }
 
 class _MenuViewState extends State<MenuView> {
+  Stream<QuerySnapshot> readLink() {
+    final db = FirebaseFirestore.instance;
+    return db.collection('myLink').snapshots();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readLink();
+  }
+
   final controller = WebViewController()
     ..setJavaScriptMode(JavaScriptMode.unrestricted)
     ..setBackgroundColor(const Color(0x00000000))
@@ -647,10 +661,46 @@ class _MenuViewState extends State<MenuView> {
                         text: displayedInfo,
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
+          ),
+          const SizedBox(height: 10),
+          StreamBuilder(
+            stream: readLink(),
+            builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CupertinoActivityIndicator());
+              } else if (snapshot.hasError) {
+                return Text(snapshot.error.toString());
+              } else if (snapshot.hasData) {
+                final links = (snapshot.data!.docs as List<dynamic>)
+                    .map((e) => LinkModel.fromFirestore(
+                        e.data() as Map<String, dynamic>))
+                    .toList();
+                return Container(
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    height: 92,
+                    color: Colors.grey,
+                    child: ListView.builder(
+                        itemCount: links.length,
+                        itemBuilder: (context, index) {
+                          final myLink = links[index];
+                          return Card(
+                            child: ListTile(
+                              title: GestureDetector(
+                                  onTap: () {
+                                    print('object');
+                                  },
+                                  child: Text(myLink.link)),
+                            ),
+                          );
+                        }));
+              } else {
+                return const Text('ERROR UNKNOWN');
+              }
+            },
           ),
           currentIndex == 0
               ? buildAllCategory()
